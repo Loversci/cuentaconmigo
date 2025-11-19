@@ -4,1808 +4,801 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cuenta Conmigo - Firma Contable Digital para PYMEs Nicaragüenses | Producto Integrador Final UNAN-Managua 2025">
-    <meta name="keywords" content="contabilidad, pymes, nicaragua, digital, automatización, finanzas, UNAN-Managua">
+    <meta name="keywords" content="contabilidad digital, pymes nicaragua, automatización contable, valoración de proyectos, UNAN-Managua">
     <meta name="author" content="Jaime Antonio Espino Álvarez">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cuentaconmigo.com/">
-    <meta property="og:title" content="CUENTA CONMIGO | Firma Contable Digital para PYMEs Nicaragüenses">
-    <meta property="og:description" content="Transformando la gestión contable nicaragüense mediante automatización, innovación tecnológica y servicios profesionales accesibles">
+    <meta property="og:title" content="CUENTA CONMIGO | Firma Contable Digital para PYMEs">
+    <meta property="og:description" content="Solución innovadora que resuelve la brecha contable de las PYMEs nicaragüenses con tecnología, accesibilidad y excelencia profesional.">
     <meta property="og:image" content="https://raw.githubusercontent.com/Loversci/cuentaconmigo/main/img/og-image.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://cuentaconmigo.com/">
-    <meta property="twitter:title" content="CUENTA CONMIGO | Firma Contable Digital para PYMEs Nicaragüenses">
-    <meta property="twitter:description" content="Transformando la gestión contable nicaragüense mediante automatización, innovación tecnológica y servicios profesionales accesibles">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/Loversci/cuentaconmigo/main/img/og-image.jpg">
+    <meta property="og:url" content="https://cuentaconmigo.com/">
     
     <title>CUENTA CONMIGO | Firma Contable Digital para PYMEs Nicaragüenses</title>
-
-    <!-- Favicon -->
     <link rel="icon" href="https://raw.githubusercontent.com/Loversci/cuentaconmigo/main/img/favicon.png" type="image/png">
 
-    <!-- Preconexiones para mejorar rendimiento -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://unpkg.com">
-
     <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome 6.6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Estilos -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Icons & Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.min.css">
+
     <style>
-        /* Variables CSS - Sistema unificado */
         :root {
-            --primary-color: #2563eb;
+            --primary: #2563eb;
             --primary-dark: #1e40af;
-            --primary-light: #3b82f6;
-            --secondary-color: #10b981;
-            --secondary-dark: #059669;
-            --accent-color: #f59e0b;
-            --accent-dark: #d97706;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-dark: #0f172a;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --text-light: #94a3b8;
-            --text-white: #ffffff;
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-            --font-primary: 'Poppins', sans-serif;
-            --font-secondary: 'Inter', sans-serif;
-            --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --radius-lg: 0.75rem;
-            --radius-xl: 1rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2.5rem;
-            --spacing-xl: 4rem;
-            --spacing-2xl: 6rem;
-        }
-        
-        /* Reset y estilos base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: var(--font-secondary);
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-md);
-        }
-        
-        /* Navegación */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: saturate(180%) blur(12px);
-            -webkit-backdrop-filter: saturate(180%) blur(12px);
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-base);
-            height: 80px;
-        }
-        
-        .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: var(--shadow-lg);
-            height: 70px;
-        }
-        
-        .nav-container {
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 var(--spacing-md);
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-family: var(--font-primary);
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .logo i {
-            font-size: 2.2rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            z-index: 1001;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-        }
-        
-        .menu-toggle span {
-            width: 28px;
-            height: 3px;
-            background: var(--primary-color);
-            border-radius: 9999px;
-            transition: var(--transition-base);
-        }
-        
-        .menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-        }
-        
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-        
-        .nav-link {
-            position: relative;
-            font-weight: 600;
-            color: var(--text-secondary);
-            padding: 0.5rem 0;
-            font-size: 1.05rem;
-            text-decoration: none;
-            transition: var(--transition-base);
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            border-radius: 9999px;
-            transition: all var(--transition-base);
-            transform: translateX(-50%);
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary-color);
-        }
-        
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: var(--text-white);
-            padding-top: 80px;
-            overflow: hidden;
-        }
-        
-        #particles-js {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(15, 23, 42, 0.4);
-            z-index: 1;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 900px;
-            padding: 0 var(--spacing-md);
-        }
-        
-        .hero-title {
-            font-family: var(--font-primary);
-            font-size: clamp(2.8rem, 7vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-        }
-        
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
-            font-weight: 300;
-            max-width: 800px;
-            margin: 0 auto var(--spacing-xl);
-            opacity: 0.95;
-        }
-        
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: var(--spacing-md);
-            margin: var(--spacing-xl) 0;
-        }
-        
-        .stat-item {
-            padding: var(--spacing-lg);
-            background: rgba(255, 255, 255, 0.12);
-            border-radius: var(--radius-lg);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition-base);
-        }
-        
-        .stat-item:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .stat-item i {
-            font-size: 2.8rem;
-            margin-bottom: var(--spacing-sm);
-            opacity: 0.9;
-        }
-        
-        .metric-number {
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .hero-cta {
-            display: flex;
-            justify-content: center;
-            gap: var(--spacing-lg);
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2.5rem;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            transition: var(--transition-base);
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-primary {
-            background: white;
-            color: var(--primary-dark);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: white;
-            transform: translateY(-4px);
-        }
-        
-        .scroll-indicator {
-            position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2.5s infinite;
-            color: rgba(255,255,255,0.7);
-        }
-        
-        .mouse {
-            width: 30px;
-            height: 50px;
-            border: 3px solid rgba(255,255,255,0.7);
-            border-radius: 20px;
-            position: relative;
-        }
-        
-        .mouse::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            width: 6px;
-            height: 10px;
-            background: rgba(255,255,255,0.8);
-            border-radius: 50%;
-            animation: scroll 2s infinite;
-            transform: translateX(-50%);
-        }
-        
-        /* Secciones generales */
-        .section {
-            padding: var(--spacing-2xl) 0;
-            position: relative;
-        }
-        
-        .section:nth-child(even) {
-            background: var(--bg-secondary);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: var(--spacing-xl);
-        }
-        
-        .section-badge {
-            display: inline-block;
-            padding: 0.6rem 1.8rem;
-            background: linear-gradient(135deg, var(--primary-light), var(--secondary-color));
-            color: white;
-            font-weight: 700;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            border-radius: 9999px;
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .section-title {
-            font-family: var(--font-primary);
-            font-size: clamp(2.2rem, 5vw, 3.2rem);
-            font-weight: 800;
-            margin-bottom: var(--spacing-md);
-            color: var(--text-primary);
-        }
-        
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-        
-        /* Cards genéricas */
-        .proyecto-card,
-        .mercado-card,
-        .tecnico-card,
-        .financiero-card,
-        .pricing-card,
-        .multimedia-card {
-            background: white;
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-base);
-            height: fit-content;
-        }
-        
-        .proyecto-card:hover,
-        .mercado-card:hover,
-        .tecnico-card:hover,
-        .financiero-card:hover,
-        .pricing-card:hover,
-        .multimedia-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
-        }
-        
-        /* Responsive grids */
-        .proyecto-grid,
-        .mercado-content,
-        .tecnico-grid,
-        .financiero-grid,
-        .conclusiones-grid,
-        .multimedia-grid {
-            display: grid;
-            gap: var(--spacing-lg);
-        }
-        
-        /* PROYECTO Section */
-        .proyecto-grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-        
-        .card-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .segment-list {
-            list-style: none;
-        }
-        
-        .segment-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .segment-list i {
-            color: var(--secondary-color);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .service-item {
-            text-align: center;
-            padding: 1.5rem 1rem;
-            border-radius: 8px;
-            background: var(--bg-secondary);
-            transition: var(--transition-base);
-        }
-        
-        .service-item:hover {
-            background: var(--primary-color);
-            color: var(--white);
-        }
-        
-        .service-item:hover i,
-        .service-item:hover h4 {
-            color: var(--white);
-        }
-        
-        .service-item i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .service-item h4 {
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-        
-        .datos-proyecto {
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .datos-header {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .datos-header i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-        
-        .datos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-        
-        .dato-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
-        .dato-label {
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-        
-        .dato-value {
-            color: var(--text-light);
-        }
-        
-        /* MERCADO Section */
-        .mercado-content {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-        
-        .mercado-header {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .mercado-header i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-        
-        .metric-highlight {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            border-radius: 8px;
-            color: var(--white);
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .pricing-card {
-            position: relative;
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: var(--transition-base);
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .pricing-card.featured {
-            transform: scale(1.05);
-            z-index: 1;
-        }
-        
-        .ribbon {
-            position: absolute;
-            top: 10px;
-            right: -30px;
-            background: var(--secondary-color);
-            color: var(--white);
-            padding: 0.25rem 2rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            transform: rotate(45deg);
-            z-index: 1;
-        }
-        
-        .pricing-header {
-            padding: 1.5rem 1rem;
-            text-align: center;
-            color: var(--white);
-        }
-        
-        .pricing-header.basic {
-            background: var(--primary-color);
-        }
-        
-        .pricing-header.professional {
-            background: var(--accent-color);
-        }
-        
-        .pricing-header.enterprise {
-            background: var(--text-dark);
-        }
-        
-        .price {
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            margin-top: 0.5rem;
-        }
-        
-        .currency {
-            font-size: 1rem;
-            margin-right: 2px;
-        }
-        
-        .amount {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        
-        .period {
-            font-size: 0.875rem;
-            margin-left: 2px;
-        }
-        
-        /* TÉCNICO Section */
-        .tecnico-grid {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        
-        .capacity-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .capacity-item {
-            text-align: center;
-            padding: 1.5rem 1rem;
-            border-radius: 8px;
-            background: var(--bg-secondary);
-            transition: var(--transition-base);
-        }
-        
-        .capacity-item:hover {
-            background: var(--primary-color);
-            color: var(--white);
-        }
-        
-        .capacity-item h4 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* FINANCIERO Section */
-        .financiero-grid {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        
-        .highlight-card {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: var(--white);
-        }
-        
-        .inversion-total {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-        }
-        
-        .inversion-total h4 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .indicadores-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .indicador-card {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-        }
-        
-        .indicador-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .indicador-value-large {
-            margin-top: 1rem;
-        }
-        
-        .indicador-value-large .value {
-            display: block;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-        
-        .indicador-value-large .label {
-            font-size: 0.875rem;
-            opacity: 0.9;
-        }
-        
-        /* CONCLUSIONES Section */
-        .conclusiones-grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .conclusiones-header, .recomendaciones-header {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .conclusiones-header i, .recomendaciones-header i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-        
-        .conclusion-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
-        .conclusion-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        
-        .conclusion-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2rem;
-            height: 2rem;
-            background: var(--primary-color);
-            color: var(--white);
-            border-radius: 50%;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-        
-        .conclusion-content h4 {
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-        
-        .recomendacion-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .recomendacion-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .recomendacion-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.5rem;
-            height: 2.5rem;
-            background: var(--bg-secondary);
-            color: var(--primary-color);
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        
-        .recomendacion-content h4 {
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-        
-        .cierre-motivacional {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: var(--bg-secondary);
-            border-radius: 12px;
-        }
-        
-        .cierre-motivacional h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-        }
-        
-        .cierre-motivacional p {
-            margin-bottom: 1rem;
-            font-size: 1.125rem;
-        }
-        
-        /* MULTIMEDIA Section */
-        .multimedia-section {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        }
-        
-        .multimedia-grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .multimedia-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .multimedia-card h3 {
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-        
-        .multimedia-card p {
-            margin-bottom: 1.5rem;
-            color: var(--text-light);
-        }
-        
-        .video-container {
-            margin-top: 1.5rem;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .video-container video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .office-3d {
-            width: 100%;
-            height: 520px;
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
-            background: var(--bg-dark);
-        }
-        
-        .note {
-            font-size: 0.875rem;
-            color: var(--text-light);
-            margin-top: 1rem;
-        }
-        
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --radius: 0.75rem;
+            --radius-lg: 1rem;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: var(--gray-800); background: var(--white); }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* Navbar */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); height: 80px; transition: var(--transition); box-shadow: var(--shadow-sm); }
+        .navbar.scrolled { height: 70px; box-shadow: var(--shadow-md); }
+        .nav-container { height: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
+        .logo i { font-size: 2.4rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-menu { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-link { font-weight: 600; color: var(--gray-600); position: relative; text-decoration: none; }
+        .nav-link::after { content: ''; position: absolute; bottom: -8px; left: 50%; width: 0; height: 3px; background: var(--primary); border-radius: 2px; transition: var(--transition); transform: translateX(-50%); }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+
+        /* Hero */
+        .hero { min-height: 100vh; background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: white; display: flex; align-items: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: rgba(15,23,42,0.5); }
+        .hero-content { position: relative; z-index: 2; text-align: center; max-width: 1000px; }
+        .hero-title { font-family: 'Poppins', sans-serif; font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
+        .gradient-text { background: linear-gradient(90deg, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: 1.35rem; max-width: 800px; margin: 0 auto 3rem; opacity: 0.95; font-weight: 300; }
+        .hero-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 4rem 0; }
+        .stat-card { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.2); }
+        .stat-number { font-size: 2.8rem; font-weight: 800; }
+        .btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2.5rem; font-weight: 600; border-radius: 9999px; text-decoration: none; transition: var(--transition); }
+        .btn-primary { background: white; color: var(--primary-dark); box-shadow: var(--shadow-lg); }
+        .btn-primary:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+
+        /* Secciones */
+        .section { padding: 6rem 0; }
+        .section:nth-child(even) { background: var(--gray-50); }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .badge { display: inline-block; background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: 9999px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+        .section-title { font-family: 'Poppins', sans-serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; margin: 1rem 0; color: var(--gray-900); }
+        .section-subtitle { font-size: 1.2rem; color: var(--gray-600); max-width: 800px; margin: 0 auto; }
+
+        /* Cards */
+        .grid { display: grid; gap: 2rem; }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+        .card { background: white; padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: var(--transition); }
+        .card:hover { transform: translateY(-12px); box-shadow: var(--shadow-lg); }
+        .card-icon { font-size: 3rem; color: var(--primary); margin-bottom: 1.5rem; }
+        .card-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--gray-900); }
+
+        /* Charts */
+        .chart-container { position: relative; height: 400px; margin: 2rem 0; background: white; border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-sm); }
+
         /* Footer */
-        .footer {
-            margin-top: var(--spacing-2xl);
-            background: var(--bg-dark);
-            color: var(--text-white);
-            padding: var(--spacing-2xl) 0 var(--spacing-lg);
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-xl);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            color: var(--text-white);
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--primary-light);
-            margin-bottom: 1rem;
-        }
-        
-        .footer-desc {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-light);
-        }
-        
-        .footer-section ul li i {
-            color: var(--primary-light);
-            width: 1rem;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid #334155;
-            color: var(--text-light);
-            font-size: 0.875rem;
-        }
-        
-        .footer-tech {
-            margin-top: 0.5rem;
-        }
-        
-        /* Botón Volver Arriba */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 3rem;
-            height: 3rem;
-            background: var(--primary-color);
-            color: var(--white);
-            border: none;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition-base);
-            z-index: 999;
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background: var(--accent-color);
-            transform: translateY(-3px);
-        }
-        
-        /* Clases de utilidad */
-        .full-width {
-            grid-column: 1 / -1;
-        }
-        
-        /* Animaciones */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-20px);
-            }
-            60% {
-                transform: translateY(-10px);
-            }
-        }
-        
-        @keyframes scroll {
-            0% {
-                opacity: 1;
-                top: 10px;
-            }
-            100% {
-                opacity: 0;
-                top: 25px;
-            }
-        }
-        
+        .footer { background: var(--gray-900); color: white; padding: 4rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+        .footer-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: white; }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; opacity: 0.8; }
+
         /* Responsive */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
-            
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.4s ease;
-                padding: 2rem;
-            }
-            
-            .nav-menu.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            .nav-link {
-                font-size: 1.5rem;
-                padding: 1rem;
-            }
-            
-            .container {
-                padding: 0 var(--spacing-sm);
-            }
-            
-            .proyecto-grid,
-            .mercado-content,
-            .tecnico-grid,
-            .financiero-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .multimedia-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-            
-            .back-to-top {
-                bottom: 1rem;
-                right: 1rem;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .proyecto-grid,
-            .mercado-content,
-            .tecnico-grid,
-            .financiero-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .multimedia-grid {
-                grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 250px;
-                justify-content: center;
-            }
-            
-            .hero-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .services-grid,
-            .datos-grid,
-            .capacity-stats,
-            .indicadores-grid,
-            .conclusiones-grid,
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
+            .nav-menu { position: fixed; top: 80px; left: 0; width: 100%; background: white; flex-direction: column; padding: 2rem; box-shadow: var(--shadow-lg); transform: translateY(-100%); opacity: 0; transition: var(--transition); }
+            .nav-menu.active { transform: translateY(0); opacity: 1; }
+            .menu-toggle { display: flex; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; }
+            .menu-toggle span { width: 28px; height: 3px; background: var(--primary); border-radius: 3px; transition: var(--transition); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navegación -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#inicio" class="logo">
-                <i class="fas fa-calculator" aria-hidden="true"></i>
-                <span>CUENTA CONMIGO</span>
-            </a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu" role="menubar">
-                <li role="none"><a href="#inicio" class="nav-link active" role="menuitem">Inicio</a></li>
-                <li role="none"><a href="#proyecto" class="nav-link" role="menuitem">Proyecto</a></li>
-                <li role="none"><a href="#mercado" class="nav-link" role="menuitem">Mercado</a></li>
-                <li role="none"><a href="#tecnico" class="nav-link" role="menuitem">Técnico</a></li>
-                <li role="none"><a href="#financiero" class="nav-link" role="menuitem">Financiero</a></li>
-                <li role="none"><a href="#conclusiones" class="nav-link" role="menuitem">Conclusiones</a></li>
-                <li role="none"><a href="#multimedia" class="nav-link" role="menuitem">Multimedia</a></li>
+            <a href="#" class="logo"><i class="fas fa-calculator"></i> Cuenta Conmigo</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#proyecto" class="nav-link">Proyecto</a></li>
+                <li><a href="#mercado" class="nav-link">Mercado</a></li>
+                <li><a href="#tecnico" class="nav-link">Técnico</a></li>
+                <li><a href="#financiero" class="nav-link">Financiero</a></li>
+                <li><a href="#conclusiones" class="nav-link">Conclusiones</a></li>
+                <li><a href="#multimedia" class="nav-link">Multimedia</a></li>
             </ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section id="inicio" class="hero" aria-labelledby="hero-title">
-        <div id="particles-js" aria-hidden="true"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title" id="hero-title">
-                <span class="gradient-text">CUENTA CONMIGO</span><br>
-                Firma Contable Digital para PYMEs
-            </h1>
-            <p class="hero-subtitle">
-                Transformando la gestión contable nicaragüense mediante automatización, innovación tecnológica y servicios profesionales accesibles
-            </p>
+    <section id="inicio" class="hero">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">Transformando la <span class="gradient-text">Contabilidad</span><br>de las PYMEs Nicaragüenses</h1>
+                <p class="hero-subtitle">Firma contable 100% digital que combina tecnología de punta, automatización inteligente y excelencia profesional para cerrar la brecha contable del 70% del sector PYME.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-number">$1,064,719</div>
+                        <div>VAN</div>
+                    </div>
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-number">45.7%</div>
+                        <div>TIR</div>
+                    </div>
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-number">2.8 años</div>
+                        <div>Payback</div>
+                    </div>
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stat-number">562%</div>
+                        <div>ROI</div>
+                    </div>
+                </div>
 
-            <div class="hero-stats">
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-dollar-sign" aria-hidden="true"></i>
-                    <h3 class="metric-number">1.06M</h3>
-                    <p>Valor Actual Neto (VAN)</p>
-                </div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-users" aria-hidden="true"></i>
-                    <h3 class="metric-number">1890</h3>
-                    <p>Clientes Año 5</p>
-                </div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-chart-line" aria-hidden="true"></i>
-                    <h3 class="metric-number">45.7%</h3>
-                    <p>TIR del Proyecto</p>
+                <div style="margin-top: 3rem;">
+                    <a href="#proyecto" class="btn btn-primary">Conocer el Proyecto <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-
-            <div class="hero-cta">
-                <a href="#proyecto" class="btn btn-primary">
-                    <span>Explorar Proyecto</span>
-                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                </a>
-                <a href="#multimedia" class="btn btn-secondary">
-                    <span>Ver Multimedia</span>
-                    <i class="fas fa-play-circle" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-        <div class="scroll-indicator" aria-hidden="true">
-            <div class="mouse"></div>
         </div>
     </section>
 
-    <!-- PROYECTO -->
-    <section id="proyecto" class="section" aria-labelledby="proyecto-title">
+    <!-- Proyecto -->
+    <section id="proyecto" class="section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-badge">Visión General</span>
-                <h2 class="section-title" id="proyecto-title">Información General del Proyecto</h2>
-                <p class="section-subtitle">Un proyecto innovador que revoluciona los servicios contables para PYMEs nicaragüenses</p>
+                <span class="badge">El Proyecto</span>
+                <h2 class="section-title">Una Solución Real a un Problema Real</h2>
+                <p class="section-subtitle">Cuenta Conmigo nace para resolver la brecha crítica de servicios contables profesionales en las PYMEs nicaragüenses.</p>
             </div>
 
-            <div class="proyecto-grid">
-                <div class="proyecto-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
-                    <h3>Propuesta de Valor</h3>
-                    <ul class="segment-list">
-                        <li><i class="fas fa-check" aria-hidden="true"></i> Automatización completa de procesos contables</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> Modelo SaaS accesible</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> Asesoría financiera personalizada</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> Reducción de costos hasta 35%</li>
+            <div class="grid grid-3">
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon"><i class="fas fa-crosshairs"></i></div>
+                    <h3 class="card-title">Misión</h3>
+                    <p>Democratizar el acceso a servicios contables de calidad mediante tecnología y precios accesibles, impulsando el crecimiento sostenible de las PYMEs.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon"><i class="fas fa-eye"></i></div>
+                    <h3 class="card-title">Visión</h3>
+                    <p>Ser la firma contable digital líder en Nicaragua para 2030, atendiendo a más de 10,000 PYMEs con innovación y excelencia.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon"><i class="fas fa-heart"></i></div>
+                    <h3 class="card-title">Valores</h3>
+                    <p>Transparencia • Innovación • Cercanía • Excelencia • Responsabilidad Social</p>
+                </div>
+            </div>
+
+            <div class="grid grid-3" style="margin-top: 4rem;">
+                <div class="card" data-aos="fade-up">
+                    <h3 class="card-title">Segmentos Objetivo</h3>
+                    <ul style="margin-top: 1rem; line-height: 2;">
+                        <li><strong>Comerciantes</strong> (35%)</li>
+                        <li><strong>Servicios profesionales</strong> (25%)</li>
+                        <li><strong>Producción artesanal</strong> (20%)</li>
+                        <li><strong>Agroindustria</strong> (15%)</li>
+                        <li><strong>Tecnología</strong> (5%)</li>
                     </ul>
                 </div>
-
-                <div class="proyecto-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-icon"><i class="fas fa-bullseye" aria-hidden="true"></i></div>
-                    <h3>Objetivo General</h3>
-                    <p>Evaluar la viabilidad financiera del proyecto CUENTA CONMIGO para automatizar procesos contables de PYMEs en el período 2025-2030.</p>
+                <div class="card" data-aos="fade-up-up" data-aos-delay="100">
+                    <h3 class="card-title">Servicios Clave</h3>
+                    <ul style="margin-top: 1rem; line-height: 2;">
+                        <li>Contabilidad completa automatizada</li>
+                        <li>Asesoría tributaria estratégica</li>
+                        <li>Estados financieros auditables</li>
+                        <li>Declaraciones mensuales y anuales</li>
+                        <li>Reportes gerenciales en tiempo real</li>
+                    </ul>
                 </div>
-
-                <div class="proyecto-card full-width" data-aos="fade-up" data-aos-delay="300">
-                    <h3>Objetivos Específicos</h3>
-                    <div class="services-grid">
-                        <div class="service-item">
-                            <i class="fas fa-chart-pie" aria-hidden="true"></i>
-                            <h4>Estructura de costos</h4>
-                            <p>y modelo financiero 5 años</p>
-                        </div>
-                        <div class="service-item">
-                            <i class="fas fa-calculator" aria-hidden="true"></i>
-                            <h4>Cálculo indicadores</h4>
-                            <p>VAN, TIR, Payback</p>
-                        </div>
-                        <div class="service-item">
-                            <i class="fas fa-project-diagram" aria-hidden="true"></i>
-                            <h4>Flujos de caja</h4>
-                            <p>Escenarios múltiples</p>
-                        </div>
-                        <div class="service-item">
-                            <i class="fas fa-hand-holding-usd" aria-hidden="true"></i>
-                            <h4>Financiamiento óptimo</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="datos-proyecto" data-aos="zoom-in">
-                <div class="datos-header">
-                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                    <h3>Datos del Proyecto</h3>
-                </div>
-                <div class="datos-grid">
-                    <div class="dato-item"><span class="dato-label">Autor:</span><span class="dato-value">Jaime Antonio Espino Álvarez</span></div>
-                    <div class="dato-item"><span class="dato-label">Asesora:</span><span class="dato-value">Licda. Carmen Lizbeth Montenegro Meléndez</span></div>
-                    <div class="dato-item"><span class="dato-label">Institución:</span><span class="dato-value">UNAN-Managua</span></div>
-                    <div class="dato-item"><span class="dato-label">Carrera:</span><span class="dato-value">Contaduría Pública y Finanzas</span></div>
-                    <div class="dato-item"><span class="dato-label">Materia:</span><span class="dato-value">Valoración Financiera de Proyectos</span></div>
-                    <div class="dato-item"><span class="dato-label">Fecha:</span><span class="dato-value">Noviembre 2025</span></div>
-                    <div class="dato-item">
-                        <img src="https://i.ibb.co/4pX7Y3K/escudo-unan-managua-oficial.png" alt="UNAN-Managua" style="width:180px; margin:20px auto; display:block; border-radius:12px;" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MERCADO -->
-    <section id="mercado" class="section" aria-labelledby="mercado-title">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-badge">Análisis de Mercado</span>
-                <h2 class="section-title" id="mercado-title">Estudio de Mercado</h2>
-            </div>
-
-            <div class="mercado-content">
-                <div class="mercado-card" data-aos="fade-up">
-                    <div class="mercado-header"><i class="fas fa-chart-bar" aria-hidden="true"></i><h3>Demanda Insatisfecha</h3></div>
-                    <div class="metric-highlight">
-                        <div class="metric-number">12,600</div>
-                        <div class="metric-label">PYMEs con demanda insatisfecha</div>
-                    </div>
-                    <p>Universo: 45,000 PYMEs en Managua<br>Demanda potencial: 18,000<br>Meta de captura: 15% del mercado</p>
-                </div>
-
-                <div class="mercado-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="mercado-header"><i class="fas fa-users" aria-hidden="true"></i><h3>Competencia</h3></div>
-                    <p>8 competidores identificados<br>Precios entre $200-$500/mes<br>Ninguno ofrece automatización completa</p>
-                    <div class="pricing-grid">
-                        <div class="pricing-card">
-                            <div class="pricing-header basic"><h4>Básico</h4><div class="price"><span class="currency">$</span><span class="amount">149</span><span class="period">/mes</span></div></div>
-                        </div>
-                        <div class="pricing-card featured">
-                            <div class="ribbon">Recomendado</div>
-                            <div class="pricing-header professional"><h4>Profesional</h4><div class="price"><span class="currency">$</span><span class="amount">349</span><span class="period">/mes</span></div></div>
-                        </div>
-                        <div class="pricing-card">
-                            <div class="pricing-header enterprise"><h4>Enterprise</h4><div class="price"><span class="currency">$</span><span class="amount">649</span><span class="period">/mes</span></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TÉCNICO -->
-    <section id="tecnico" class="section" aria-labelledby="tecnico-title">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-badge">Estudio Técnico</span>
-                <h2 class="section-title" id="tecnico-title">Plan de Crecimiento y Capacidad</h2>
-            </div>
-
-            <div class="tecnico-grid">
-                <div class="tecnico-card full-width" data-aos="fade-up">
-                    <h3>Proyección de Clientes 2025-2029</h3>
-                    <div class="capacity-stats">
-                        <div class="capacity-item"><h4>2025</h4><p>315 clientes</p></div>
-                        <div class="capacity-item"><h4>2026</h4><p>630 clientes (+100%)</p></div>
-                        <div class="capacity-item"><h4>2027</h4><p>1,050 clientes (+67%)</p></div>
-                        <div class="capacity-item"><h4>2028</h4><p>1,575 clientes (+50%)</p></div>
-                        <div class="capacity-item"><h4>2029</h4><p>1,890 clientes (+20%)</p></div>
-                    </div>
-                </div>
-
-                <div class="tecnico-card" data-aos="fade-up">
-                    <h3>Capacidad Año 5 (2029)</h3>
-                    <ul class="segment-list">
-                        <li><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i> 22,680 estados financieros</li>
-                        <li><i class="fas fa-file-alt" aria-hidden="true"></i> 47,250 declaraciones fiscales</li>
-                        <li><i class="fas fa-comments" aria-hidden="true"></i> 5,670 sesiones de asesoría</li>
-                        <li><i class="fas fa-sync" aria-hidden="true"></i> 22,680 conciliaciones bancarias</li>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="card-title">Datos Clave del Proyecto</h3>
+                    <ul style="margin-top: 1rem; line-height: 2;">
+                        <li><strong>Inversión inicial:</strong> $190,500</li>
+                        <li><strong>Primer año de operación:</strong> 2025</li>
+                        <li><strong>Clientes Año 1:</strong> 315</li>
+                        <li><strong>Ingresos Año 5:</strong> $3.6 millones</li>
+                        <li><strong>Utilidad neta Año 5:</strong> $1.14 millones</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FINANCIERO -->
-    <section id="financiero" class="section" aria-labelledby="financiero-title">
+    <!-- Mercado -->
+    <section id="mercado" class="section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-badge">Análisis Financiero</span>
-                <h2 class="section-title" id="financiero-title">Resultados Financieros</h2>
+                <span class="badge">Análisis de Mercado</span>
+                <h2 class="section-title">Un Mercado con Alta Demanda Insatisfecha</h2>
+                <p class="section-subtitle">El 70% de las PYMEs nicaragüenses no cuenta con servicios contables profesionales.</p>
             </div>
 
-            <div class="financiero-grid">
-                <div class="financiero-card highlight-card full-width" data-aos="fade-up">
-                    <div class="inversion-total">
-                        <h4>$187,500</h4>
-                        <p>Inversión Inicial Total</p>
-                    </div>
-                    <div class="indicadores-grid">
-                        <div class="indicador-card van"><div class="indicador-icon"><i class="fas fa-dollar-sign" aria-hidden="true"></i></div><h4>VAN</h4><div class="indicador-value-large"><span class="value">$1.06M</span><span class="label">Positivo</span></div></div>
-                        <div class="indicador-card tir"><div class="indicador-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div><h4>TIR</h4><div class="indicador-value-large"><span class="value">45.7%</span></div></div>
-                        <div class="indicador-card payback"><div class="indicador-icon"><i class="fas fa-clock" aria-hidden="true"></i></div><h4>Payback</h4><div class="indicador-value-large"><span class="value">2.8 años</span></div></div>
-                        <div class="indicador-card roi"><div class="indicador-icon"><i class="fas fa-percentage" aria-hidden="true"></i></div><h4>RB/C</h4><div class="indicador-value-large"><span class="value">15.34</span></div></div>
-                    </div>
+            <div class="chart-container" data-aos="fade-up">
+                <canvas id="demandChart"></canvas>
+            </div>
+
+            <div class="grid grid-3" style="margin-top: 4rem;">
+                <div class="card highlight" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;" data-aos="zoom-in">
+                    <h3 style="font-size: 3rem; margin-bottom: 0.5rem;">24,300</h3>
+                    <p>PYMEs con demanda contable proyectada para 2029</p>
+                </div>
+                <div class="card" data-aos="fade-up">
+                    <h3 class="card-title">Oportunidad de Captura</h3>
+                    <p>Con solo el <strong>7.8%</strong> del mercado insatisfecho en 5 años, generaremos más de <strong>$3.6 millones</strong> en ingresos anuales.</p>
+                </div>
+                <div class="card" data-aos="fade-up">
+                    <h3 class="card-title">Precios Competitivos</h3>
+                    <p>Desde <strong>C$2,500</strong> mensuales (Básico) hasta <strong>C$12,000</strong> (Enterprise), hasta 60% más accesibles que la competencia tradicional.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONCLUSIONES -->
-    <section id="conclusiones" class="section" aria-labelledby="conclusiones-title">
+    <!-- Técnico -->
+    <section id="tecnico" class="section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-badge">Cierre</span>
-                <h2 class="section-title" id="conclusiones-title">Conclusiones y Recomendaciones</h2>
+                <span class="badge">Aspecto Técnico</span>
+                <h2 class="section-title">Capacidad de Crecimiento Exponencial</h2>
             </div>
 
-            <div class="conclusiones-grid">
-                <div class="conclusiones-card" data-aos="fade-up">
-                    <div class="conclusiones-header"><i class="fas fa-check-circle" aria-hidden="true"></i><h3>Conclusiones Principales</h3></div>
-                    <div class="conclusion-item">
-                        <div class="conclusion-number">1</div>
-                        <div class="conclusion-content"><h4>Viabilidad Confirmada</h4><p>VAN $1M+, TIR 45.7%, RB/C 15.34 → Altamente rentable</p></div>
-                    </div>
-                    <div class="conclusion-item">
-                        <div class="conclusion-number">2</div>
-                        <div class="conclusion-content"><h4>Mercado Claro</h4><p>12,600 PYMEs con demanda insatisfecha → Oportunidad $18M/año</p></div>
-                    </div>
-                    <div class="conclusion-item">
-                        <div class="conclusion-number">3</div>
-                        <div class="conclusion-content"><h4>Ventaja Competitiva</h4><p>Automatización reduce costos 35% vs competencia</p></div>
-                    </div>
-                    <div class="conclusion-item">
-                        <div class="conclusion-number">4</div>
-                        <div class="conclusion-content"><h4>Escalabilidad</h4><p>Crecimiento explosivo y márgenes crecientes</p></div>
-                    </div>
-                </div>
-
-                <div class="recomendaciones-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="recomendaciones-header"><i class="fas fa-lightbulb" aria-hidden="true"></i><h3>Recomendaciones</h3></div>
-                    <div class="recomendacion-item">
-                        <div class="recomendacion-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
-                        <div class="recomendacion-content"><h4>Implementación por Fases</h4><p>Iniciar con servicios core + programa piloto 20-30 clientes</p></div>
-                    </div>
-                    <div class="recomendacion-item">
-                        <div class="recomendacion-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
-                        <div class="recomendacion-content"><h4>Alianzas Estratégicas</h4><p>Bancos, AMCHAM, COSEP</p></div>
-                    </div>
-                    <div class="recomendacion-item">
-                        <div class="recomendacion-icon"><i class="fas fa-user-graduate" aria-hidden="true"></i></div>
-                        <div class="recomendacion-content"><h4>Capital Humano</h4><p>Contadores certificados NIIF + capacitación continua</p></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cierre-motivacional" data-aos="fade-up" data-aos-delay="300">
-                <h2>¡Gracias por tu atención!</h2>
-                <p>CUENTA CONMIGO no es solo un proyecto académico...<br>Es el futuro de la contabilidad digital en Nicaragua.</p>
-                <p><strong>Jaime Antonio Espino Álvarez</strong><br>Licda. Carmen Lizbeth Montenegro Meléndez<br>UNAN-Managua | Noviembre 2025</p>
+            <div class="chart-container" data-aos="fade-up">
+                <canvas id="productionChart"></canvas>
             </div>
         </div>
     </section>
 
-    <!-- MULTIMEDIA -->
-    <section id="multimedia" class="section multimedia-section" aria-labelledby="multimedia-title">
+    <!-- Financiero -->
+    <section id="financiero" class="section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-badge">Recursos Multimedia</span>
-                <h2 class="section-title" id="multimedia-title">Multimedia del Proyecto</h2>
-                <p class="section-subtitle">Documento final, video explicativo y tour 3D de la oficina virtual</p>
+                <span class="badge">Valoración Financiera</span>
+                <h2 class="section-title">Un Proyecto Altamente Rentable</h2>
             </div>
 
-            <div class="multimedia-grid">
-                <div class="multimedia-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="multimedia-icon"><i class="fas fa-file-pdf" aria-hidden="true"></i></div>
-                    <h3>Documento Final</h3>
-                    <p>Producto Integrador completo (85 páginas)</p>
-                    <a href="https://raw.githubusercontent.com/Loversci/cuentaconmigo/main/documentos/Cuenta_Conmigo_Producto_Integrador_Final.pdf" download class="btn btn-primary">
-                        <i class="fas fa-download" aria-hidden="true"></i> Descargar PDF
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
+                <div class="card" data-aos="fade-up">
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="inversionChart"></canvas>
+                    </div>
+                    <h3 class="card-title" style="text-align: center; margin-top: 1rem;">Inversión Total: $190,500</h3>
+                </div>
+                <div class="card" data-aos="fade-up">
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="financiamientoChart"></canvas>
+                    </div>
+                    <h3 class="card-title" style="text-align: center; margin-top: 1rem;">Estructura de Financiamiento</h3>
+                </div>
+            </div>
+
+            <div class="chart-container" style="height: 500px;" data-aos="fade-up">
+                <canvas id="flujoChart"></canvas>
+            </div>
+
+            <div class="grid grid-3" style="margin-top: 4rem;">
+                <div class="card highlight" style="background: linear-gradient(135deg, #10b981, #34d399); color: white; text-align: center;" data-aos="zoom-in">
+                    <h3 style="font-size: 3rem;">$1,064,719</h3>
+                    <p><strong>VAN</strong> (Valor Actual Neto)</p>
+                </div>
+                <div class="card highlight" style="background: linear-gradient(135deg, var(--accent), #fbbf24); color: white; text-align: center;" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 style="font-size: 3rem;">45.7%</h3>
+                    <p><strong>TIR</strong> (Tasa Interna de Retorno)</p>
+                </div>
+                <div class="card highlight" style="background: linear-gradient(135deg, var(--primary), #60a5fa); color: white; text-align: center;" data-aos="zoom-in" data-aos-delay="200">
+                    <h3 style="font-size: 2.5rem;">2.8 años</h3>
+                    <p><strong>Payback</strong> descontado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusiones -->
+    <section id="conclusiones" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="badge">Conclusión Final</span>
+                <h2 class="section-title">Un Proyecto Viable, Rentable e Impactante</h2>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card" data-aos="fade-up">
+                    <h3 class="card-title">Viabilidad Técnica</h3>
+                    <p>Modelo escalable basado en automatización y cloud computing. Capacidad para crecer 500% en 5 años sin aumentar proporcionalmente costos fijos.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="card-title">Viabilidad Económica</h3>
+                    <p>Indicadores financieros sobresalientes: VAN positivo, TIR muy superior a la tasa de oportunidad y recuperación de inversión en menos de 3 años.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="card-title">Impacto Social</h3>
+                    <p>Contribuirá al fortalecimiento del tejido empresarial nicaragüense, promoviendo formalización, acceso al crédito y crecimiento sostenible.</p>
+                </div>
+            </div>
+
+            <div class="card" style="text-align: center; margin-top: 4rem; padding: 4rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;" data-aos="fade-up">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Cuenta Conmigo no es solo un negocio.<br>Es una contribución al desarrollo de Nicaragua.</h2>
+                <p style="font-size: 1.3rem; opacity: 0.95;">Jaime Antonio Espino Álvarez<br>UNAN-Managua • Noviembre 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multimedia -->
+    <section id="multimedia" class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="badge">Material de Apoyo</span>
+                <h2 class="section-title">Recursos Multimedia</h2>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-file-pdf"></i></div>
+                    <h3 class="card-title">Documento Completo</h3>
+                    <p>Producto Integrador Final (85 páginas)</p>
+                    <a href="https://raw.githubusercontent.com/Loversci/cuentaconmigo/main/documentos/Cuenta_Conmigo_Producto_Integrador_Final.pdf" download class="btn btn-primary" style="margin-top: 1rem;">
+                        <i class="fas fa-download"></i> Descargar PDF
                     </a>
                 </div>
 
-                <div class="multimedia-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="multimedia-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
-                    <h3>Video de Presentación</h3>
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon"><i class="fas fa-video"></i></div>
+                    <h3 class="card-title">Video de Presentación</h3>
                     <p>Explicación completa en 8 minutos</p>
-                    <div class="video-container">
-                        <video controls preload="metadata" poster="https://i.ibb.co/thumbnail-cuentaconmigo.jpg" aria-label="Video de presentación del proyecto Cuenta Conmigo">
+                    <div class="video-container" style="margin-top: 1rem; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg);">
+                        <video controls preload="metadata" style="width: 100%;" poster="https://i.ibb.co/thumbnail-cuentaconmigo.jpg">
                             <source src="https://github.com/Loversci/cuentaconmigo/raw/main/videos/Cuenta_Conmigo_Presentacion_Final.mp4" type="video/mp4">
-                            Tu navegador no soporta video.
                         </video>
                     </div>
                 </div>
 
-                <div class="multimedia-card full-width" data-aos="fade-up" data-aos-delay="300">
-                    <div class="multimedia-icon"><i class="fas fa-cube" aria-hidden="true"></i></div>
-                    <h3>Tour 3D Interactivo - Oficina Virtual</h3>
-                    <p>Explora la oficina contable del futuro</p>
-                    <div id="office-3d-container" class="office-3d" role="application" aria-label="Tour 3D interactivo de la oficina virtual">
-                        <div style="display:flex; align-items:center; justify-content:center; height:100%; color:white; flex-direction:column;">
-                            <i class="fas fa-cube" style="font-size:4rem; margin-bottom:1rem;"></i>
-                            <p>Modelo 3D de la oficina contable</p>
-                            <p style="font-size:0.9rem; opacity:0.8;">Cargando modelo interactivo...</p>
-                        </div>
-                    </div>
-                    <p class="note">
-                        <i class="fas fa-mouse-pointer" aria-hidden="true"></i> Mouse para rotar • Rueda para zoom • Clic derecho + arrastre para mover
-                    </p>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon"><i class="fas fa-cube"></i></div>
+                    <h3 class="card-title">Tour 3D Interactivo</h3>
+                    <p>Oficina contable del futuro</p>
+                    <div id="office-3d-container" style="height: 320px; background: var(--gray-900); border-radius: var(--radius); margin-top: 1rem; overflow: hidden;"></div>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--gray-600);"><i class="fas fa-mouse-pointer"></i> Mouse para rotar • Rueda para zoom</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <i class="fas fa-calculator" aria-hidden="true"></i>
-                        <span>CUENTA CONMIGO</span>
-                    </div>
-                    <p class="footer-desc">Firma contable digital que democratiza el acceso a servicios profesionales para PYMEs nicaragüenses.</p>
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-title"><i class="fas fa-calculator"></i> Cuenta Conmigo</h3>
+                    <p>Firma contable digital que impulsa el crecimiento de las PYMEs nicaragüenses con innovación y excelencia.</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Proyecto Académico</h4>
-                    <ul>
-                        <li><i class="fas fa-university" aria-hidden="true"></i> UNAN-Managua</li>
-                        <li><i class="fas fa-graduation-cap" aria-hidden="true"></i> Contaduría Pública y Finanzas</li>
-                        <li><i class="fas fa-book" aria-hidden="true"></i> Valoración Financiera de Proyectos</li>
-                        <li><i class="fas fa-calendar" aria-hidden="true"></i> Noviembre 2025</li>
-                    </ul>
-                    <img src="https://i.ibb.co/4pX7Y3K/escudo-unan-managua-oficial.png" alt="UNAN-Managua" style="width:120px; margin-top:15px;" loading="lazy">
+                <div>
+                    <h4 class="footer-title">Proyecto Académico</h4>
+                    <p>UNAN-Managua<br>Contaduría Pública y Finanzas<br>Valoración Financiera de Proyectos<br>Noviembre 2025</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Resultados Clave</h4>
-                    <ul>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> VAN: $1,064,719</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> TIR: 45.7%</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> Payback: 2.8 años</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> ROI: 562%</li>
+                <div>
+                    <h4 class="footer-title">Resultados Clave</h4>
+                    <ul style="list-style: none; margin-top: 1rem;">
+                        <li>• VAN: $1,064,719</li>
+                        <li>• TIR: 45.7%</li>
+                        <li>• Payback: 2.8 años</li>
+                        <li>• ROI: 562%</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Cuenta Conmigo • Producto Integrador Final • UNAN-Managua</p>
-                <p class="footer-tech">Hecho con <i class="fas fa-heart" style="color:#ef4444" aria-hidden="true"></i> por Jaime Antonio Espino Álvarez</p>
+                <p>© 2025 Cuenta Conmigo • Producto Integrador Final • Todos los derechos reservados</p>
+                <p>Hecho con <i class="fas fa-heart" style="color: #f43f5e;"></i> por Jaime Antonio Espino Álvarez</p>
             </div>
         </div>
     </footer>
-
-    <!-- Botón Volver Arriba -->
-    <button id="backToTop" class="back-to-top" aria-label="Volver al inicio">
-        <i class="fas fa-chevron-up" aria-hidden="true"></i>
-    </button>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.5.0/tsparticles.bundle.min.js"></script>
-
-    <!-- Three.js -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/examples/js/loaders/GLTFLoader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/examples/js/controls/OrbitControls.min.js"></script>
 
-    <!-- Script principal mejorado -->
+    <!-- Tu script.js completo (el mismo que tenías) -->
     <script>
-        // Inicialización de AOS
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                offset: 100
-            });
-            
-            // Menú móvil
-            const menuToggle = document.getElementById('menuToggle');
-            const navMenu = document.getElementById('navMenu');
-            
-            menuToggle?.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                menuToggle.classList.toggle('active');
-                menuToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
-            });
-            
-            // Cerrar menú al hacer clic en un enlace
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                });
-            });
-            
-            // Navegación suave
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
-                        
-                        window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Botón volver arriba
-            const backToTopButton = document.getElementById('backToTop');
-            
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.classList.add('show');
-                } else {
-                    backToTopButton.classList.remove('show');
+// ===================================
+// CUENTA CONMIGO - JavaScript Principal
+// Versión corregida y optimizada - Noviembre 2025
+// ===================================
+
+// ===================================
+// GRÁFICOS CON CHART.JS
+// ===================================
+
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.color = '#6b7280';
+
+// Gráfico 1: Proyección de Demanda Insatisfecha
+const demandChartCtx = document.getElementById('demandChart');
+if (demandChartCtx) {
+    new Chart(demandChartCtx, {
+        type: 'line',
+        data: {
+            labels: ['2025', '2026', '2027', '2028', '2029'],
+            datasets: [
+                { label: 'Demanda Total PYMEs', data: [18000, 19440, 21384, 22914, 24300], borderColor: '#2563eb', backgroundColor: 'rgba(37, 99, 235, 0.1)', borderWidth: 3, tension: 0.4, fill: true },
+                { label: 'Demanda Insatisfecha (70%)', data: [12600, 13608, 14969, 16040, 17010], borderColor: '#10b981', backgroundColor: 'rgba(16, 185, 129, 0.1)', borderWidth: 3, tension: 0.4, fill: true },
+                { label: 'Cuenta Conmigo (Clientes)', data: [315, 630, 1050, 1575, 1890], borderColor: '#f59e0b', backgroundColor: 'rgba(245, 158, 11, 0.1)', borderWidth: 3, tension: 0.4, fill: true }
+            ]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' }, tooltip: { mode: 'index', intersect: false } }, scales: { y: { beginAtZero: true, ticks: { callback: v => v.toLocaleString() } } } }
+    });
+}
+
+// Gráfico 2: Plan de Producción Anual
+const productionChartCtx = document.getElementById('productionChart');
+if (productionChartCtx) {
+    new Chart(productionChartCtx, {
+        type: 'bar',
+        data: {
+            labels: ['2025', '2026', '2027', '2028', '2029'],
+            datasets: [
+                {
+                    label: 'Total Servicios Anuales',
+                    data: [37406, 78074, 130123, 195185, 234221],
+                    backgroundColor: [
+                        'rgba(37, 99, 235, 0.8)',
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(16, 185, 129, 0.8)',
+                        'rgba(20, 184, 166, 0.8)',
+                        'rgba(245, 158, 11, 0.8)'
+                    ],
+                    borderColor: [
+                        '#2563eb',
+                        '#3b82f6',
+                        '#10b981',
+                        '#14b8a6',
+                        '#f59e0b'
+                    ],
+                    borderWidth: 2
                 }
-            });
-            
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Navbar Scroll Effect
-            const navbar = document.getElementById('navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.parsed.y.toLocaleString() + ' servicios';
+                        }
+                    }
                 }
-            }, { passive: true });
-            
-            // Active link en scroll
-            window.addEventListener('scroll', () => {
-                let current = '';
-                const sections = document.querySelectorAll('section[id], .hero');
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 120;
-                    const sectionHeight = section.offsetHeight;
-                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }, { passive: true });
-            
-            // Counter Animation mejorado
-            function animateCounters() {
-                const counters = document.querySelectorAll('.metric-number, .amount, .value');
-                
-                const formatNumber = (num) => {
-                    if (Math.abs(num) >= 1000000) return (num / 1000000).toFixed(1) + 'M';
-                    if (Math.abs(num) >= 1000) return (num / 1000).toFixed(0) + 'K';
-                    if (num.toString().includes('%')) return Math.round(num) + '%';
-                    return Math.round(num).toLocaleString();
-                };
-                
-                counters.forEach(counter => {
-                    let text = counter.textContent.trim().replace(/[^0-9KM.%.-]/g, '');
-                    let target = 0;
-                    if (text.includes('M')) target = parseFloat(text) * 1000000;
-                    else if (text.includes('K')) target = parseFloat(text) * 1000;
-                    else if (text.includes('%')) target = parseFloat(text);
-                    else target = parseFloat(text) || 0;
-                    
-                    let current = 0;
-                    const increment = target / 120; // ~2 segundos
-                    
-                    const update = () => {
-                        current += increment;
-                        if (Math.abs(current) < Math.abs(target)) {
-                            counter.textContent = formatNumber(current);
-                            requestAnimationFrame(update);
-                        } else {
-                            counter.textContent = formatNumber(target);
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return value.toLocaleString();
                         }
-                    };
-                    
-                    const observer = new IntersectionObserver(entries => {
-                        if (entries[0].isIntersecting) {
-                            update();
-                            observer.unobserve(counter);
-                        }
-                    }, { threshold: 0.5 });
-                    
-                    observer.observe(counter);
-                });
-            }
-            
-            animateCounters();
-            
-            // Inicializar partículas
-            if (typeof tsParticles !== 'undefined' && document.getElementById('particles-js')) {
-                tsParticles.load("particles-js", {
-                    particles: {
-                        number: { value: 80, density: { enable: true, value_area: 800 } },
-                        color: { value: "#ffffff" },
-                        shape: { type: "circle" },
-                        opacity: { value: 0.5, random: true },
-                        size: { value: 3, random: true },
-                        links: { enable: true, distance: 150, color: "#ffffff", opacity: 0.2, width: 1 },
-                        move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out" }
-                    },
-                    interactivity: {
-                        detect_on: "canvas",
-                        events: {
-                            onhover: { enable: true, mode: "repulse" },
-                            onclick: { enable: true, mode: "push" },
-                            resize: true
-                        }
-                    },
-                    retina_detect: true
-                });
-            }
-            
-            // Inicializar escena 3D
-            const container = document.getElementById('office-3d-container');
-            if (container && typeof THREE !== 'undefined') {
-                const scene = new THREE.Scene();
-                scene.background = new THREE.Color(0x0f172a);
-
-                const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
-                camera.position.set(8, 5, 10);
-
-                const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-                renderer.setSize(container.clientWidth, container.clientHeight);
-                renderer.setPixelRatio(window.devicePixelRatio);
-                container.innerHTML = '';
-                container.appendChild(renderer.domElement);
-
-                // Luces
-                scene.add(new THREE.AmbientLight(0xffffff, 0.7));
-                const dirLight = new THREE.DirectionalLight(0xffffff, 1);
-                dirLight.position.set(5, 10, 7);
-                scene.add(dirLight);
-
-                // Controles
-                const controls = new THREE.OrbitControls(camera, renderer.domElement);
-                controls.enableDamping = true;
-                controls.dampingFactor = 0.05;
-                controls.minDistance = 5;
-                controls.maxDistance = 20;
-                controls.maxPolarAngle = Math.PI / 2;
-
-                // Cargar modelo GLB
-                const loader = new THREE.GLTFLoader();
-                loader.load(
-                    'https://github.com/Loversci/cuentaconmigo/raw/main/3d/oficina_contable.glb',
-                    (gltf) => {
-                        const model = gltf.scene;
-                        model.scale.set(2.5, 2.5, 2.5);
-                        model.position.set(0, -1, 0);
-                        scene.add(model);
-                    },
-                    undefined,
-                    (error) => {
-                        console.error('Error cargando modelo 3D:', error);
-                        // Fallback visual atractivo
-                        const geometry = new THREE.DodecahedronGeometry(3);
-                        const material = new THREE.MeshStandardMaterial({ 
-                            color: 0x2563eb, 
-                            wireframe: true, 
-                            emissive: 0x2563eb, 
-                            emissiveIntensity: 0.8 
-                        });
-                        const fallback = new THREE.Mesh(geometry, material);
-                        scene.add(fallback);
-                        
-                        const animateFallback = () => {
-                            fallback.rotation.x += 0.01;
-                            fallback.rotation.y += 0.01;
-                            requestAnimationFrame(animateFallback);
-                            renderer.render(scene, camera);
-                        };
-                        animateFallback();
                     }
-                );
-
-                // Loop de animación
-                const animate = () => {
-                    requestAnimationFrame(animate);
-                    controls.update();
-                    renderer.render(scene, camera);
-                };
-                animate();
-
-                // Resize
-                window.addEventListener('resize', () => {
-                    camera.aspect = container.clientWidth / container.clientHeight;
-                    camera.updateProjectionMatrix();
-                    renderer.setSize(container.clientWidth, container.clientHeight);
-                });
+                }
             }
-            
-            console.log('🎉 Cuenta Conmigo - Presentación Cargada Exitosamente');
-            console.log('📊 Proyecto: Firma Contable Digital para PYMEs');
-            console.log('👨‍🎓 Autor: Jaime Antonio Espino Álvarez');
-            console.log('🏫 UNAN-Managua | Noviembre 2025');
-        });
+        }
+    });
+}
+
+// Gráfico 3: Inversión por Año
+const inversionChartCtx = document.getElementById('inversionChart');
+if (inversionChartCtx) {
+    new Chart(inversionChartCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Año 0 (2024)', 'Año 1 (2025)', 'Año 2-5 (2026-2029)'],
+            datasets: [{
+                data: [65000, 25000, 100000],
+                backgroundColor: [
+                    'rgba(37, 99, 235, 0.8)',
+                    'rgba(16, 185, 129, 0.8)',
+                    'rgba(245, 158, 11, 0.8)'
+                ],
+                borderColor: [
+                    '#2563eb',
+                    '#10b981',
+                    '#f59e0b'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.parsed || 0;
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = ((value / total) * 100).toFixed(1);
+                            return `${label}: $${value.toLocaleString()} (${percentage}%)`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Gráfico 4: Estructura de Financiamiento
+const financiamientoChartCtx = document.getElementById('financiamientoChart');
+if (financiamientoChartCtx) {
+    new Chart(financiamientoChartCtx, {
+        type: 'pie',
+        data: {
+            labels: [
+                'Aporte de Socios (33%)',
+                'Préstamo BANPRO (43%)',
+                'Reinversión Utilidades (24%)'
+            ],
+            datasets: [{
+                data: [62700, 81700, 45600],
+                backgroundColor: [
+                    'rgba(37, 99, 235, 0.8)',
+                    'rgba(16, 185, 129, 0.8)',
+                    'rgba(245, 158, 11, 0.8)'
+                ],
+                borderColor: [
+                    '#2563eb',
+                    '#10b981',
+                    '#f59e0b'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const value = context.parsed || 0;
+                            return `$${value.toLocaleString()}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Gráfico 5: Flujos de Caja Proyectados
+const flujoChartCtx = document.getElementById('flujoChart');
+if (flujoChartCtx) {
+    new Chart(flujoChartCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Año 0', 'Año 1 (2025)', 'Año 2 (2026)', 'Año 3 (2027)', 'Año 4 (2028)', 'Año 5 (2029)'],
+            datasets: [
+                {
+                    label: 'Ingresos',
+                    data: [0, 565080, 1199880, 1999800, 2999700, 3599640],
+                    backgroundColor: 'rgba(16, 185, 129, 0.8)',
+                    borderColor: '#10b981',
+                    borderWidth: 2
+                },
+                {
+                    label: 'Costos + Gastos',
+                    data: [0, -521269, -852482, -1253870, -1693832, -1975803],
+                    backgroundColor: 'rgba(239, 68, 68, 0.8)',
+                    borderColor: '#ef4444',
+                    borderWidth: 2
+                },
+                {
+                    label: 'Flujo Neto',
+                    data: [-187500, -17927, 154584, 488356, 890313, 1107891],
+                    backgroundColor: 'rgba(37, 99, 235, 0.8)',
+                    borderColor: '#2563eb',
+                    borderWidth: 2,
+                    type: 'line',
+                    tension: 0.4
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            let value = context.parsed.y || 0;
+                            return `${label}: $${value.toLocaleString()}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Gráfico 6: Estado de Resultados Año 5
+const resultadosChartCtx = document.getElementById('resultadosChart');
+if (resultadosChartCtx) {
+    new Chart(resultadosChartCtx, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                'Ingresos por Servicios',
+                'Costos Operativos',
+                'Gastos Administrativos',
+                'Gastos de Ventas',
+                'Utilidad Neta'
+            ],
+            datasets: [{
+                data: [3599640, 1295870, 503949, 161984, 1136686],
+                backgroundColor: [
+                    'rgba(16, 185, 129, 0.8)',
+                    'rgba(239, 68, 68, 0.8)',
+                    'rgba(245, 158, 11, 0.8)',
+                    'rgba(139, 92, 246, 0.8)',
+                    'rgba(37, 99, 235, 0.8)'
+                ],
+                borderColor: [
+                    '#10b981',
+                    '#ef4444',
+                    '#f59e0b',
+                    '#8b5cf6',
+                    '#2563eb'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            size: 10
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.parsed || 0;
+                            return `${label}: $${value.toLocaleString()}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// ===================================
+// ESCENA 3D OFICINA CONTABLE (Three.js totalmente funcional)
+// ===================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('office-3d-container');
+    if (!container || typeof THREE === 'undefined') return;
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0f172a);
+
+    const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.set(8, 5, 10);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    container.appendChild(renderer.domElement);
+
+    // Luces
+    scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+    dirLight.position.set(5, 10, 7);
+    scene.add(dirLight);
+
+    // Controles
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.minDistance = 5;
+    controls.maxDistance = 20;
+    controls.maxPolarAngle = Math.PI / 2;
+
+    // Cargar modelo GLB
+    const loader = new THREE.GLTFLoader();
+    loader.load(
+        'https://github.com/Loversci/cuentaconmigo/raw/main/3d/oficina_contable.glb',
+        (gltf) => {
+            const model = gltf.scene;
+            model.scale.set(2.5, 2.5, 2.5);
+            model.position.set(0, -1, 0);
+            scene.add(model);
+        },
+        undefined,
+        (error) => {
+            console.error('Error cargando modelo 3D:', error);
+            // Fallback visual atractivo
+            const geometry = new THREE.DodecahedronGeometry(3);
+            const material = new THREE.MeshStandardMaterial({ color: 0x2563eb, wireframe: true, emissive: 0x2563eb, emissiveIntensity: 0.8 });
+            const fallback = new THREE.Mesh(geometry, material);
+            scene.add(fallback);
+            const animateFallback = () => {
+                fallback.rotation.x += 0.01;
+                fallback.rotation.y += 0.01;
+                requestAnimationFrame(animateFallback);
+                renderer.render(scene, camera);
+            };
+            animateFallback();
+        }
+    );
+
+    // Loop de animación
+    const animate = () => {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+    };
+    animate();
+
+    // Resize
+    window.addEventListener('resize', () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+});
     </script>
 </body>
 </html>
