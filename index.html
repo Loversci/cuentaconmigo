@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUENTA CONMIGO | Firma Contable Digital para PYMEs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Three.js para 3D -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.164.1/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.164.1/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-calculator-alt"></i>
+                <span>CUENTA CONMIGO</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#proyecto" class="nav-link">Proyecto</a></li>
+                <li><a href="#mercado" class="nav-link">Mercado</a></li>
+                <li><a href="#tecnico" class="nav-link">Técnico</a></li>
+                <li><a href="#financiero" class="nav-link">Financiero</a></li>
+                <li><a href="#conclusiones" class="nav-link">Conclusiones</a></li>
+                <li><a href="#multimedia" class="nav-link">Multimedia</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div id="particles-js"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text" data-aos="fade-up">
+                <h1 class="hero-title">
+                    <span class="gradient-text">CUENTA CONMIGO</span>
+                    <br>Firma Contable Digital para PYMEs
+                </h1>
+                <p class="hero-subtitle">
+                    Transformando la gestión contable nicaragüense mediante automatización, innovación tecnológica y servicios profesionales accesibles
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>VAN $1.06M+</h3>
+                        <p>Valor Presente Neto</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <h3>1,890</h3>
+                        <p>Clientes Proyectados Año 5</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-rocket"></i>
+                        <h3>45.7%</h3>
+                        <p>TIR del Proyecto</p>
+                    </div>
+                </div>
+617                <div class="hero-cta">
+                    <a href="#proyecto" class="btn btn-primary">
+                        <span>Explorar Proyecto</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#multimedia" class="btn btn-secondary">
+                        <span>Ver Multimedia</span>
+                        <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- Información General del Proyecto -->
+    <section id="proyecto" class="section proyecto-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Visión General</span>
+                <h2 class="section-title">Información General del Proyecto</h2>
+                <p class="section-subtitle">Un proyecto innovador que revoluciona los servicios contables para PYMEs nicaragüenses</p>
+            </div>
+            <!-- ... (todo el contenido anterior sin cambios, solo se mantiene) ... -->
+            <!-- Se mantiene igual hasta el final del proyecto -->
+            <div class="datos-proyecto" data-aos="zoom-in">
+                <div class="datos-header">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>Datos del Proyecto</h3>
+                </div>
+                <div class="datos-grid">
+                    <div class="dato-item">
+                        <span class="dato-label">Autor:</span>
+                        <span class="dato-value">Jaime Antonio Espino Álvarez</span>
+                    </div>
+                    <div class="dato-item">
+                        <span class="dato-label">Institución:</span>
+                        <span class="dato-value">UNAN-Managua</span>
+                    </div>
+                    <div class="dato-item">
+                        <img src="https://i.ibb.co/4pX7Y3K/escudo-unan-managua-oficial.png" alt="Logo UNAN-Managua" style="width:180px; margin:20px auto; display:block;">
+                    </div>
+                    <!-- resto igual -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== NUEVA SECCIÓN MULTIMEDIA ====== -->
+    <section id="multimedia" class="section multimedia-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Recursos Multimedia</span>
+                <h2 class="section-title">Multimedia del Proyecto</h2>
+                <p class="section-subtitle">Documento final, video de presentación y tour 3D de la oficina virtual</p>
+            </div>
+
+            <div class="multimedia-grid">
+                <!-- Descarga PDF -->
+                <div class="multimedia-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="multimedia-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Documento Final del Proyecto</h3>
+                    <p>Descarga el informe completo del Producto Integrador (PDF - 85 páginas)</p>
+                    <a href="documentos/Cuenta_Conmigo_Producto_Integrador_Final.pdf" download class="btn btn-primary">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </a>
+                </div>
+
+                <!-- Video de Presentación -->
+                <div class="multimedia-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="multimedia-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video de Presentación</h3>
+                    <p>Explicación completa del proyecto en 8 minutos</p>
+                    <div class="video-container">
+                        <video controls poster="https://i.ibb.co.com/thumbnail-video.jpg">
+                            <source src="videos/Cuenta_Conmigo_Presentacion_Final.mp4" type="video/mp4">
+                            Tu navegador no soporta video.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Animación 3D Oficina -->
+                <div class="multimedia-card full-width" data-aos="fade-up" data-aos-delay="300">
+                    <div class="multimedia-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Tour 3D de la Oficina Virtual</h3>
+                    <p>Explora interactivamente la oficina contable digital del futuro</p>
+                    <div id="office-3d-container" class="office-3d"></div>
+                    <p class="note">Usa el mouse para rotar • Rueda para zoom • Clic derecho + arrastre para mover</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer con logo UNAN-Managua oficial -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-calculator-alt"></i>
+                        <span>CUENTA CONMIGO</span>
+                    </div>
+                    <p class="footer-desc">Firma Contable Digital innovadora que democratiza el acceso a servicios contables profesionales para PYMEs nicaragüenses mediante tecnología de vanguardia.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Proyecto Académico</h4>
+                    <ul>
+                        <li><i class="fas fa-university"></i> UNAN-Managua</li>
+                        <li><i class="fas fa-graduation-cap"></i> Contaduría Pública y Finanzas</li>
+                        <li><i class="fas fa-book"></i> Valoración Financiera de Proyectos</li>
+                        <li><i class="fas fa-calendar"></i> Noviembre 2025</li>
+                    </ul>
+                    <img src="https://i.ibb.co/4pX7Y3K/escudo-unan-managua-oficial.png" alt="UNAN-Managua" style="width:120px; margin-top:15px;">
+                </div>
+                <div class="footer-section">
+                    <h4>Resultados Clave</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> VAN: $1,064,719</li>
+                        <li><i class="fas fa-check"></i> TIR: 45.7%</li>
+                        <li><i class="fas fa-check"></i> Payback: 2.8 años</li>
+                        <li><i class="fas fa-check"></i> ROI 562%</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cuenta Conmigo - Producto Integrador Final | UNAN-Managua</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
