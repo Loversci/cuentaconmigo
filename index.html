@@ -3,32 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUENTA CONMIGO | Firma Contable Digital para PYMEs</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Cuenta Conmigo - Firma Contable Digital para PYMEs Nicaragüenses | Producto Integrador Final UNAN-Managua 2025">
+    <meta name="author" content="Jaime Antonio Espino Álvarez">
+    <title>CUENTA CONMIGO | Firma Contable Digital para PYMEs Nicaragüenses</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/Loversci/cuentaconmigo/main/img/favicon.png" type="image/png">
+
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Three.js para 3D -->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.164.1/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.164.1/examples/js/loaders/GLTFLoader.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6.6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <!-- Navegación -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <i class="fas fa-calculator-alt"></i>
+                <i class="fas fa-calculator"></i>
                 <span>CUENTA CONMIGO</span>
             </div>
-            <button class="menu-toggle" id="menuToggle">
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
                 <li><a href="#proyecto" class="nav-link">Proyecto</a></li>
                 <li><a href="#mercado" class="nav-link">Mercado</a></li>
                 <li><a href="#tecnico" class="nav-link">Técnico</a></li>
@@ -39,46 +50,46 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="inicio" class="hero">
         <div id="particles-js"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <div class="hero-text" data-aos="fade-up">
-                <h1 class="hero-title">
-                    <span class="gradient-text">CUENTA CONMIGO</span>
-                    <br>Firma Contable Digital para PYMEs
-                </h1>
-                <p class="hero-subtitle">
-                    Transformando la gestión contable nicaragüense mediante automatización, innovación tecnológica y servicios profesionales accesibles
-                </p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>VAN $1.06M+</h3>
-                        <p>Valor Presente Neto</p>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-users"></i>
-                        <h3>1,890</h3>
-                        <p>Clientes Proyectados Año 5</p>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-rocket"></i>
-                        <h3>45.7%</h3>
-                        <p>TIR del Proyecto</p>
-                    </div>
+            <h1 class="hero-title">
+                <span class="gradient-text">CUENTA CONMIGO</span><br>
+                Firma Contable Digital para PYMEs
+            </h1>
+            <p class="hero-subtitle">
+                Transformando la gestión contable nicaragüense mediante automatización, innovación tecnológica y servicios profesionales accesibles
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3 class="metric-number">1.06M</h3>
+                    <p>Valor Actual Neto (VAN)</p>
                 </div>
-617                <div class="hero-cta">
-                    <a href="#proyecto" class="btn btn-primary">
-                        <span>Explorar Proyecto</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#multimedia" class="btn btn-secondary">
-                        <span>Ver Multimedia</span>
-                        <i class="fas fa-play-circle"></i>
-                    </a>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-users"></i>
+                    <h3 class="metric-number">1890</h3>
+                    <p>Clientes Año 5</p>
                 </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-chart-line"></i>
+                    <h3 class="metric-number">45.7%</h3>
+                    <p>TIR del Proyecto</p>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#proyecto" class="btn btn-primary">
+                    <span>Explorar Proyecto</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#multimedia" class="btn btn-secondary">
+                    <span>Ver Multimedia</span>
+                    <i class="fas fa-play-circle"></i>
+                </a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -86,100 +97,283 @@
         </div>
     </section>
 
-    <!-- Información General del Proyecto -->
-    <section id="proyecto" class="section proyecto-section">
+    <!-- PROYECTO -->
+    <section id="proyecto" class="section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-badge">Visión General</span>
                 <h2 class="section-title">Información General del Proyecto</h2>
                 <p class="section-subtitle">Un proyecto innovador que revoluciona los servicios contables para PYMEs nicaragüenses</p>
             </div>
-            <!-- ... (todo el contenido anterior sin cambios, solo se mantiene) ... -->
-            <!-- Se mantiene igual hasta el final del proyecto -->
+
+            <div class="proyecto-grid">
+                <div class="proyecto-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Propuesta de Valor</h3>
+                    <ul class="segment-list">
+                        <li><i class="fas fa-check"></i> Automatización completa de procesos contables</li>
+                        <li><i class="fas fa-check"></i> Modelo SaaS accesible</li>
+                        <li><i class="fas fa-check"></i> Asesoría financiera personalizada</li>
+                        <li><i class="fas fa-check"></i> Reducción de costos hasta 35%</li>
+                    </ul>
+                </div>
+
+                <div class="proyecto-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Objetivo General</h3>
+                    <p>Evaluar la viabilidad financiera del proyecto CUENTA CONMIGO para automatizar procesos contables de PYMEs en el período 2025-2030.</p>
+                </div>
+
+                <div class="proyecto-card full-width" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Objetivos Específicos</h3>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Estructura de costos</h4>
+                            <p>y modelo financiero 5 años</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-calculator"></i>
+                            <h4>Cálculo indicadores</h4>
+                            <p>VAN, TIR, Payback</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <h4>Flujos de caja</h4>
+                            <p>Escenarios múltiples</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <h4>Financiamiento óptimo</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="datos-proyecto" data-aos="zoom-in">
                 <div class="datos-header">
                     <i class="fas fa-info-circle"></i>
                     <h3>Datos del Proyecto</h3>
                 </div>
                 <div class="datos-grid">
+                    <div class="dato-item"><span class="dato-label">Autor:</span><span class="dato-value">Jaime Antonio Espino Álvarez</span></div>
+                    <div class="dato-item"><span class="dato-label">Asesora:</span><span class="dato-value">Licda. Carmen Lizbeth Montenegro Meléndez</span></div>
+                    <div class="dato-item"><span class="dato-label">Institución:</span><span class="dato-value">UNAN-Managua</span></div>
+                    <div class="dato-item"><span class="dato-label">Carrera:</span><span class="dato-value">Contaduría Pública y Finanzas</span></div>
+                    <div class="dato-item"><span class="dato-label">Materia:</span><span class="dato-value">Valoración Financiera de Proyectos</span></div>
+                    <div class="dato-item"><span class="dato-label">Fecha:</span><span class="dato-value">Noviembre 2025</span></div>
                     <div class="dato-item">
-                        <span class="dato-label">Autor:</span>
-                        <span class="dato-value">Jaime Antonio Espino Álvarez</span>
+                        <img src="https://i.ibb.co/4pX7Y3K/escudo-unan-managua-oficial.png" alt="UNAN-Managua" style="width:180px; margin:20px auto; display:block; border-radius:12px;">
                     </div>
-                    <div class="dato-item">
-                        <span class="dato-label">Institución:</span>
-                        <span class="dato-value">UNAN-Managua</span>
-                    </div>
-                    <div class="dato-item">
-                        <img src="https://i.ibb.co/4pX7Y3K/escudo-unan-managua-oficial.png" alt="Logo UNAN-Managua" style="width:180px; margin:20px auto; display:block;">
-                    </div>
-                    <!-- resto igual -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== NUEVA SECCIÓN MULTIMEDIA ====== -->
+    <!-- MERCADO -->
+    <section id="mercado" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Análisis de Mercado</span>
+                <h2 class="section-title">Estudio de Mercado</h2>
+            </div>
+
+            <div class="mercado-content">
+                <div class="mercado-card" data-aos="fade-up">
+                    <div class="mercado-header"><i class="fas fa-chart-bar"></i><h3>Demanda Insatisfecha</h3></div>
+                    <div class="metric-highlight">
+                        <div class="metric-number">12,600</div>
+                        <div class="metric-label">PYMEs con demanda insatisfecha</div>
+                    </div>
+                    <p>Universo: 45,000 PYMEs en Managua<br>Demanda potencial: 18,000<br>Meta de captura: 15% del mercado</p>
+                </div>
+
+                <div class="mercado-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mercado-header"><i class="fas fa-users"></i><h3>Competencia</h3></div>
+                    <p>8 competidores identificados<br>Precios entre $200-$500/mes<br>Ninguno ofrece automatización completa</p>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="pricing-header basic"><h4>Básico</h4><div class="price"><span class="currency">$</span><span class="amount">149</span><span class="period">/mes</span></div></div>
+                        </div>
+                        <div class="pricing-card featured">
+                            <div class="ribbon">Recomendado</div>
+                            <div class="pricing-header professional"><h4>Profesional</h4><div class="price"><span class="currency">$</span><span class="amount">349</span><span class="period">/mes</span></div></div>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="pricing-header enterprise"><h4>Enterprise</h4><div class="price"><span class="currency">$</span><span class="amount">649</span><span class="period">/mes</span></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TÉCNICO -->
+    <section id="tecnico" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Estudio Técnico</span>
+                <h2 class="section-title">Plan de Crecimiento y Capacidad</h2>
+            </div>
+
+            <div class="tecnico-grid">
+                <div class="tecnico-card full-width" data-aos="fade-up">
+                    <h3>Proyección de Clientes 2025-2029</h3>
+                    <div class="capacity-stats">
+                        <div class="capacity-item"><h4>2025</h4><p>315 clientes</p></div>
+                        <div class="capacity-item"><h4>2026</h4><p>630 clientes (+100%)</p></div>
+                        <div class="capacity-item"><h4>2027</h4><p>1,050 clientes (+67%)</p></div>
+                        <div class="capacity-item"><h4>2028</h4><p>1,575 clientes (+50%)</p></div>
+                        <div class="capacity-item"><h4>2029</h4><p>1,890 clientes (+20%)</p></div>
+                    </div>
+                </div>
+
+                <div class="tecnico-card" data-aos="fade-up">
+                    <h3>Capacidad Año 5 (2029)</h3>
+                    <ul class="segment-list">
+                        <li><i class="fas fa-file-invoice-dollar"></i> 22,680 estados financieros</li>
+                        <li><i class="fas fa-file-alt"></i> 47,250 declaraciones fiscales</li>
+                        <li><i class="fas fa-comments"></i> 5,670 sesiones de asesoría</li>
+                        <li><i class="fas fa-sync"></i> 22,680 conciliaciones bancarias</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINANCIERO -->
+    <section id="financiero" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Análisis Financiero</span>
+                <h2 class="section-title">Resultados Financieros</h2>
+            </div>
+
+            <div class="financiero-grid">
+                <div class="financiero-card highlight-card full-width" data-aos="fade-up">
+                    <div class="inversion-total">
+                        <h4>$187,500</h4>
+                        <p>Inversión Inicial Total</p>
+                    </div>
+                    <div class="indicadores-grid">
+                        <div class="indicador-card van"><div class="indicador-icon"><i class="fas fa-dollar-sign"></i></div><h4>VAN</h4><div class="indicador-value-large"><span class="value">$1.06M</span><span class="label">Positivo</span></div></div>
+                        <div class="indicador-card tir"><div class="indicador-icon"><i class="fas fa-chart-line"></i></div><h4>TIR</h4><div class="indicador-value-large"><span class="value">45.7%</span></div></div>
+                        <div class="indicador-card payback"><div class="indicador-icon"><i class="fas fa-clock"></i></div><h4>Payback</h4><div class="indicador-value-large"><span class="value">2.8 años</span></div></div>
+                        <div class="indicador-card roi"><div class="indicador-icon"><i class="fas fa-percentage"></i></div><h4>RB/C</h4><div class="indicador-value-large"><span class="value">15.34</span></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONCLUSIONES -->
+    <section id="conclusiones" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Cierre</span>
+                <h2 class="section-title">Conclusiones y Recomendaciones</h2>
+            </div>
+
+            <div class="conclusiones-grid">
+                <div class="conclusiones-card" data-aos="fade-up">
+                    <div class="conclusiones-header"><i class="fas fa-check-circle"></i><h3>Conclusiones Principales</h3></div>
+                    <div class="conclusion-item">
+                        <div class="conclusion-number">1</div>
+                        <div class="conclusion-content"><h4>Viabilidad Confirmada</h4><p>VAN $1M+, TIR 45.7%, RB/C 15.34 → Altamente rentable</p></div>
+                    </div>
+                    <div class="conclusion-item">
+                        <div class="conclusion-number">2</div>
+                        <div class="conclusion-content"><h4>Mercado Claro</h4><p>12,600 PYMEs con demanda insatisfecha → Oportunidad $18M/año</p></div>
+                    </div>
+                    <div class="conclusion-item">
+                        <div class="conclusion-number">3</div>
+                        <div class="conclusion-content"><h4>Ventaja Competitiva</h4><p>Automatización reduce costos 35% vs competencia</p></div>
+                    </div>
+                    <div class="conclusion-item">
+                        <div class="conclusion-number">4</div>
+                        <div class="conclusion-content"><h4>Escalabilidad</h4><p>Crecimiento explosivo y márgenes crecientes</p></div>
+                    </div>
+                </div>
+
+                <div class="recomendaciones-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="recomendaciones-header"><i class="fas fa-lightbulb"></i><h3>Recomendaciones</h3></div>
+                    <div class="recomendacion-item">
+                        <div class="recomendacion-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="recomendacion-content"><h4>Implementación por Fases</h4><p>Iniciar con servicios core + programa piloto 20-30 clientes</p></div>
+                    </div>
+                    <div class="recomendacion-item">
+                        <div class="recomendacion-icon"><i class="fas fa-handshake"></i></div>
+                        <div class="recomendacion-content"><h4>Alianzas Estratégicas</h4><p>Bancos, AMCHAM, COSEP</p></div>
+                    </div>
+                    <div class="recomendacion-item">
+                        <div class="recomendacion-icon"><i class="fas fa-user-graduate"></i></div>
+                        <div class="recomendacion-content"><h4>Capital Humano</h4><p>Contadores certificados NIIF + capacitación continua</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cierre-motivacional" data-aos="fade-up" data-aos-delay="300">
+                <h2>¡Gracias por tu atención!</h2>
+                <p>CUENTA CONMIGO no es solo un proyecto académico...<br>Es el futuro de la contabilidad digital en Nicaragua.</p>
+                <p><strong>Jaime Antonio Espino Álvarez</strong><br>Licda. Carmen Lizbeth Montenegro Meléndez<br>UNAN-Managua | Noviembre 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MULTIMEDIA -->
     <section id="multimedia" class="section multimedia-section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-badge">Recursos Multimedia</span>
                 <h2 class="section-title">Multimedia del Proyecto</h2>
-                <p class="section-subtitle">Documento final, video de presentación y tour 3D de la oficina virtual</p>
+                <p class="section-subtitle">Documento final, video explicativo y tour 3D de la oficina virtual</p>
             </div>
 
             <div class="multimedia-grid">
-                <!-- Descarga PDF -->
                 <div class="multimedia-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="multimedia-icon">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <h3>Documento Final del Proyecto</h3>
-                    <p>Descarga el informe completo del Producto Integrador (PDF - 85 páginas)</p>
+                    <div class="multimedia-icon"><i class="fas fa-file-pdf"></i></div>
+                    <h3>Documento Final</h3>
+                    <p>Producto Integrador completo (85 páginas)</p>
                     <a href="https://raw.githubusercontent.com/Loversci/cuentaconmigo/main/documentos/Cuenta_Conmigo_Producto_Integrador_Final.pdf" download class="btn btn-primary">
                         <i class="fas fa-download"></i> Descargar PDF
                     </a>
                 </div>
 
-                <!-- Video de Presentación -->
                 <div class="multimedia-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="multimedia-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
+                    <div class="multimedia-icon"><i class="fas fa-video"></i></div>
                     <h3>Video de Presentación</h3>
-                    <p>Explicación completa del proyecto en 8 minutos</p>
+                    <p>Explicación completa en 8 minutos</p>
                     <div class="video-container">
-                        <video controls poster="https://i.ibb.co.com/thumbnail-video.jpg">
+                        <video controls preload="metadata" poster="https://i.ibb.co/thumbnail-cuentaconmigo.jpg">
                             <source src="https://github.com/Loversci/cuentaconmigo/raw/main/videos/Cuenta_Conmigo_Presentacion_Final.mp4" type="video/mp4">
                             Tu navegador no soporta video.
                         </video>
                     </div>
                 </div>
 
-                <!-- Animación 3D Oficina -->
                 <div class="multimedia-card full-width" data-aos="fade-up" data-aos-delay="300">
-                    <div class="multimedia-icon">
-                        <i class="fas fa-cube"></i>
-                    </div>
-                    <h3>Tour 3D de la Oficina Virtual</h3>
-                    <p>Explora interactivamente la oficina contable digital del futuro</p>
+                    <div class="multimedia-icon"><i class="fas fa-cube"></i></div>
+                    <h3>Tour 3D Interactivo - Oficina Virtual</h3>
+                    <p>Explora la oficina contable del futuro</p>
                     <div id="office-3d-container" class="office-3d"></div>
-                    <p class="note">Usa el mouse para rotar • Rueda para zoom • Clic derecho + arrastre para mover</p>
+                    <p class="note">
+                        <i class="fas fa-mouse-pointer"></i> Mouse para rotar • Rueda para zoom • Clic derecho + arrastre para mover
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer con logo UNAN-Managua oficial -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <i class="fas fa-calculator-alt"></i>
+                        <i class="fas fa-calculator"></i>
                         <span>CUENTA CONMIGO</span>
                     </div>
-                    <p class="footer-desc">Firma Contable Digital innovadora que democratiza el acceso a servicios contables profesionales para PYMEs nicaragüenses mediante tecnología de vanguardia.</p>
+                    <p class="footer-desc">Firma contable digital que democratiza el acceso a servicios profesionales para PYMEs nicaragüenses.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Proyecto Académico</h4>
@@ -189,7 +383,7 @@
                         <li><i class="fas fa-book"></i> Valoración Financiera de Proyectos</li>
                         <li><i class="fas fa-calendar"></i> Noviembre 2025</li>
                     </ul>
-                    <img src="https://raw.githubusercontent.com/Loversci/cuentaconmigo/main/img/escudo-unan-managua-oficial.png" alt="UNAN-Managua" style="width:120px; margin-top:15px;">
+                    <img src="https://i.ibb.co/4pX7Y3K/escudo-unan-managua-oficial.png" alt="UNAN-Managua" style="width:120px; margin-top:15px;">
                 </div>
                 <div class="footer-section">
                     <h4>Resultados Clave</h4>
@@ -197,28 +391,28 @@
                         <li><i class="fas fa-check"></i> VAN: $1,064,719</li>
                         <li><i class="fas fa-check"></i> TIR: 45.7%</li>
                         <li><i class="fas fa-check"></i> Payback: 2.8 años</li>
-                        <li><i class="fas fa-check"></i> ROI 562%</li>
+                        <li><i class="fas fa-check"></i> ROI: 562%</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Cuenta Conmigo - Producto Integrador Final | UNAN-Managua</p>
+                <p>© 2025 Cuenta Conmigo • Producto Integrador Final • UNAN-Managua</p>
+                <p class="footer-tech">Hecho con <i class="fas fa-heart" style="color:#ef4444"></i> por Jaime Antonio Espino Álvarez</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
-    <!-- tsParticles (reemplaza particles.js) -->
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@3.5.0/tsparticles.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.5.0/tsparticles.bundle.min.js"></script>
 
-<!-- Three.js + complementos necesarios -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.168.0/examples/js/loaders/GLTFLoader.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.168.0/examples/js/controls/OrbitControls.min.js"></script>
-    
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/examples/js/loaders/GLTFLoader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/examples/js/controls/OrbitControls.min.js"></script>
+
+    <!-- Tu script principal -->
+    <script src="script.js"></script>
 </body>
 </html>
