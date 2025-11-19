@@ -799,6 +799,52 @@ document.addEventListener('DOMContentLoaded', () => {
         renderer.setSize(container.clientWidth, container.clientHeight);
     });
 });
+
+        document.addEventListener('DOMContentLoaded', () => {
+    // Inicializar AOS (animaciones)
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
+
+    // Menú móvil
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+
+    // Navbar scrolled effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Active link al hacer scroll (opcional pero queda pro)
+    window.addEventListener('scroll', () => {
+        let current = 'inicio';
+        document.querySelectorAll('section[id]').forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+// =============================================================
     </script>
 </body>
 </html>
