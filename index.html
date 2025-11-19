@@ -385,9 +385,23 @@
                 <div class="card" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-icon"><i class="fas fa-cube"></i></div>
                     <h3 class="card-title">Tour 3D Interactivo</h3>
-                    <p>Oficina contable del futuro</p>
-                    <div id="office-3d-container" style="height: 320px; background: var(--gray-900); border-radius: var(--radius); margin-top: 1rem; overflow: hidden;"></div>
-                    <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--gray-600);"><i class="fas fa-mouse-pointer"></i> Mouse para rotar • Rueda para zoom</p>
+                    <p>Explora la oficina física de Cuenta Conmigo en Managua</p>
+                    
+                    <!-- TOUR 360° CON KUULA (reemplaza todo el contenedor anterior) -->
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); margin-top: 1rem; box-shadow: var(--shadow-lg);">
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                            frameborder="0" 
+                            allow="xr-spatial-tracking; gyroscope; accelerometer" 
+                            allowfullscreen 
+                            scrolling="no" 
+                            src="https://kuula.co/share/collection/7HvHG?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1">
+                        </iframe>
+                    </div>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--gray-600); text-align: center;">
+                        <i class="fas fa-hand-pointer"></i> Haz clic y arrastra para moverte • Rueda del mouse o pellizca para zoom
+                    </p>
                 </div>
             </div>
         </div>
