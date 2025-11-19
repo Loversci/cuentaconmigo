@@ -3,84 +3,6 @@
 // Versión corregida y optimizada - Noviembre 2025
 // ===================================
 
-// Inicialización AOS (Animate On Scroll)
-AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: true,
-    offset: 100
-});
-
-// ===================================
-// NAVEGACIÓN
-// ===================================
-
-const navbar = document.getElementById('navbar');
-const navLinks = document.querySelectorAll('.nav-link');
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
-
-// Navbar Scroll Effect
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-}, { passive: true });
-
-// Mobile Menu Toggle
-menuToggle?.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    menuToggle.classList.toggle('active');
-});
-
-// Smooth Scroll + Active Link
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-
-        if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-
-        // Cerrar menú móvil
-        navMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
-
-        // Actualizar link activo
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-    });
-});
-
-// Active link en scroll
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section[id], .hero');
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        const sectionHeight = section.offsetHeight;
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-}, { passive: true });
-
 // ===================================
 // GRÁFICOS CON CHART.JS
 // ===================================
@@ -105,31 +27,60 @@ if (demandChartCtx) {
     });
 }
 
-// Los demás gráficos (2 al 6) permanecen exactamente igual que los tenías
-// (los copio completos para que no haya omisiones)
-
+// Gráfico 2: Plan de Producción Anual
 const productionChartCtx = document.getElementById('productionChart');
 if (productionChartCtx) {
     new Chart(productionChartCtx, {
         type: 'bar',
         data: {
             labels: ['2025', '2026', '2027', '2028', '2029'],
-            datasets: [{
-                label: 'Total Servicios Anuales',
-                data: [37406, 78074, 130123, 195185, 234221],
-                backgroundColor: ['rgba(37, 99, 235, 0.8)', 'rgba(59, 130, 246, 0.8)', 'rgba(16, 185, 129, 0.8)', 'rgba(20, 184, 166, 0.8)', 'rgba(245, 158, 11, 0.8)'],
-                borderColor: ['#2563eb', '#3b82f6', '#10b981', '#14b8a6', '#f59e0b'],
-                borderWidth: 2
-            }]
+            datasets: [
+                {
+                    label: 'Total Servicios Anuales',
+                    data: [37406, 78074, 130123, 195185, 234221],
+                    backgroundColor: [
+                        'rgba(37, 99, 235, 0.8)',
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(16, 185, 129, 0.8)',
+                        'rgba(20, 184, 166, 0.8)',
+                        'rgba(245, 158, 11, 0.8)'
+                    ],
+                    borderColor: [
+                        '#2563eb',
+                        '#3b82f6',
+                        '#10b981',
+                        '#14b8a6',
+                        '#f59e0b'
+                    ],
+                    borderWidth: 2
+                }
+            ]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { display: false },
-                tooltip: { callbacks: { label: ctx => ctx.parsed.y.toLocaleString() + ' servicios' } }
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.parsed.y.toLocaleString() + ' servicios';
+                        }
+                    }
+                }
             },
-            scales: { y: { beginAtZero: true, ticks: { callback: v => v.toLocaleString() } } }
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return value.toLocaleString();
+                        }
+                    }
+                }
+            }
         }
     });
 }
@@ -143,8 +94,16 @@ if (inversionChartCtx) {
             labels: ['Año 0 (2024)', 'Año 1 (2025)', 'Año 2-5 (2026-2029)'],
             datasets: [{
                 data: [65000, 25000, 100000],
-                backgroundColor: ['rgba(37, 99, 235, 0.8)', 'rgba(16, 185, 129, 0.8)', 'rgba(245, 158, 11, 0.8)'],
-                borderColor: ['#2563eb', '#10b981', '#f59e0b'],
+                backgroundColor: [
+                    'rgba(37, 99, 235, 0.8)',
+                    'rgba(16, 185, 129, 0.8)',
+                    'rgba(245, 158, 11, 0.8)'
+                ],
+                borderColor: [
+                    '#2563eb',
+                    '#10b981',
+                    '#f59e0b'
+                ],
                 borderWidth: 2
             }]
         },
@@ -152,15 +111,17 @@ if (inversionChartCtx) {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { position: 'bottom' },
+                legend: {
+                    position: 'bottom'
+                },
                 tooltip: {
                     callbacks: {
-                        label: ctx => {
-                            const l = ctx.label || '';
-                            const v = ctx.parsed || 0;
-                            const t = ctx.dataset.data.reduce((a, b) => a + b, 0);
-                            const p = ((v / t) * 100).toFixed(1);
-                            return `${l}: $${v.toLocaleString()} (${p}%)`;
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.parsed || 0;
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = ((value / total) * 100).toFixed(1);
+                            return `${label}: $${value.toLocaleString()} (${percentage}%)`;
                         }
                     }
                 }
@@ -169,134 +130,173 @@ if (inversionChartCtx) {
     });
 }
 
-// Los gráficos 4, 5 y 6 también sin cambios (funcionan perfecto)
+// Gráfico 4: Estructura de Financiamiento
 const financiamientoChartCtx = document.getElementById('financiamientoChart');
 if (financiamientoChartCtx) {
-    new Chart(financiamientoChartCtx, { /* ... igual que antes ... */ });
-    // (código completo idéntico al original)
+    new Chart(financiamientoChartCtx, {
+        type: 'pie',
+        data: {
+            labels: [
+                'Aporte de Socios (33%)',
+                'Préstamo BANPRO (43%)',
+                'Reinversión Utilidades (24%)'
+            ],
+            datasets: [{
+                data: [62700, 81700, 45600],
+                backgroundColor: [
+                    'rgba(37, 99, 235, 0.8)',
+                    'rgba(16, 185, 129, 0.8)',
+                    'rgba(245, 158, 11, 0.8)'
+                ],
+                borderColor: [
+                    '#2563eb',
+                    '#10b981',
+                    '#f59e0b'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const value = context.parsed || 0;
+                            return `$${value.toLocaleString()}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
 }
 
+// Gráfico 5: Flujos de Caja Proyectados
 const flujoChartCtx = document.getElementById('flujoChart');
 if (flujoChartCtx) {
-    new Chart(flujoChartCtx, { /* ... igual que antes ... */ });
+    new Chart(flujoChartCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Año 0', 'Año 1 (2025)', 'Año 2 (2026)', 'Año 3 (2027)', 'Año 4 (2028)', 'Año 5 (2029)'],
+            datasets: [
+                {
+                    label: 'Ingresos',
+                    data: [0, 565080, 1199880, 1999800, 2999700, 3599640],
+                    backgroundColor: 'rgba(16, 185, 129, 0.8)',
+                    borderColor: '#10b981',
+                    borderWidth: 2
+                },
+                {
+                    label: 'Costos + Gastos',
+                    data: [0, -521269, -852482, -1253870, -1693832, -1975803],
+                    backgroundColor: 'rgba(239, 68, 68, 0.8)',
+                    borderColor: '#ef4444',
+                    borderWidth: 2
+                },
+                {
+                    label: 'Flujo Neto',
+                    data: [-187500, -17927, 154584, 488356, 890313, 1107891],
+                    backgroundColor: 'rgba(37, 99, 235, 0.8)',
+                    borderColor: '#2563eb',
+                    borderWidth: 2,
+                    type: 'line',
+                    tension: 0.4
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            let value = context.parsed.y || 0;
+                            return `${label}: $${value.toLocaleString()}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
+                }
+            }
+        }
+    });
 }
 
+// Gráfico 6: Estado de Resultados Año 5
 const resultadosChartCtx = document.getElementById('resultadosChart');
 if (resultadosChartCtx) {
-    new Chart(resultadosChartCtx, { /* ... igual que antes ... */ });
-}
-
-// ===================================
-// ANIMACIONES Y EFECTOS
-// ===================================
-
-// Counter Animation mejorado (soporta K, M, $, comas)
-function animateCounters() {
-    const counters = document.querySelectorAll('.metric-number, .amount, .value');
-
-    const formatNumber = (num) => {
-        if (Math.abs(num) >= 1000000) return (num / 1000000).toFixed(1) + 'M';
-        if (Math.abs(num) >= 1000) return (num / 1000).toFixed(0) + 'K';
-        return Math.round(num).toLocaleString();
-    };
-
-    counters.forEach(counter => {
-        let text = counter.textContent.trim().replace(/[^0-9KM.-]/g, '');
-        let target = 0;
-        if (text.includes('M')) target = parseFloat(text) * 1000000;
-        else if (text.includes('K')) target = parseFloat(text) * 1000;
-        else target = parseFloat(text) || 0;
-
-        let current = 0;
-        const increment = target / 120; // ~2 segundos
-
-        const update = () => {
-            current += increment;
-            if (Math.abs(current) < Math.abs(target)) {
-                counter.textContent = formatNumber(current);
-                requestAnimationFrame(update);
-            } else {
-                counter.textContent = formatNumber(target);
-            }
-        };
-
-        const observer = new IntersectionObserver(entries => {
-            if (entries[0].isIntersecting) {
-                update();
-                observer.unobserve(counter);
-            }
-        }, { threshold: 0.5 });
-
-        observer.observe(counter);
-    });
-}
-
-// Parallax Hero
-window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
-    if (hero) hero.style.transform = `translateY(${window.scrollY * 0.5}px)`;
-}, { passive: true });
-
-// ===================================
-// INICIALIZACIÓN COMPLETA
-// ===================================
-
-document.addEventListener('DOMContentLoaded', () => {
-    animateCounters();
-
-    // Hover cards
-    document.querySelectorAll('.proyecto-card, .mercado-card, .tecnico-card, .financiero-card, .pricing-card').forEach(card => {
-        card.addEventListener('mouseenter', () => card.style.transform = 'translateY(-10px) scale(1.02)');
-        card.addEventListener('mouseleave', () => card.style.transform = 'translateY(0) scale(1)');
-    });
-
-    // Ripple buttons
-    document.querySelectorAll('.btn').forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            const ripple = document.createElement('span');
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
-            ripple.style.width = ripple.style.height = size + 'px';
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
-            ripple.classList.add('ripple');
-            this.appendChild(ripple);
-            setTimeout(() => ripple.remove(), 600);
-        });
-    });
-
-    console.log('🎉 Cuenta Conmigo - Presentación Cargada Exitosamente');
-    console.log('📊 Proyecto: Firma Contable Digital para PYMEs');
-    console.log('👨‍🎓 Autor: Jaime Antonio Espino Álvarez');
-    console.log('🏫 UNAN-Managua | Noviembre 2025');
-});
-
-// ===================================
-// PARTÍCULAS DE FONDO (tsParticles - versión moderna y funcional 2025)
-// ===================================
-
-if (document.getElementById('particles-js')) {
-    tsParticles.load("particles-js", {
-        particles: {
-            number: { value: 80, density: { enable: true, value_area: 800 } },
-            color: { value: "#ffffff" },
-            shape: { type: "circle" },
-            opacity: { value: 0.5, random: true },
-            size: { value: 3, random: true },
-            links: { enable: true, distance: 150, color: "#ffffff", opacity: 0.2, width: 1 },
-            move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out" }
+    new Chart(resultadosChartCtx, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                'Ingresos por Servicios',
+                'Costos Operativos',
+                'Gastos Administrativos',
+                'Gastos de Ventas',
+                'Utilidad Neta'
+            ],
+            datasets: [{
+                data: [3599640, 1295870, 503949, 161984, 1136686],
+                backgroundColor: [
+                    'rgba(16, 185, 129, 0.8)',
+                    'rgba(239, 68, 68, 0.8)',
+                    'rgba(245, 158, 11, 0.8)',
+                    'rgba(139, 92, 246, 0.8)',
+                    'rgba(37, 99, 235, 0.8)'
+                ],
+                borderColor: [
+                    '#10b981',
+                    '#ef4444',
+                    '#f59e0b',
+                    '#8b5cf6',
+                    '#2563eb'
+                ],
+                borderWidth: 2
+            }]
         },
-        interactivity: {
-            detect_on: "canvas",
-            events: {
-                onhover: { enable: true, mode: "repulse" },
-                onclick: { enable: true, mode: "push" },
-                resize: true
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            size: 10
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.parsed || 0;
+                            return `${label}: $${value.toLocaleString()}`;
+                        }
+                    }
+                }
             }
-        },
-        retina_detect: true
+        }
     });
 }
 
