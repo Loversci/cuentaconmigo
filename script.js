@@ -657,18 +657,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Cargar modelo 3D (reemplaza con tu archivo .glb)
     const loader = new THREE.GLTFLoader();
-    loader.load('3d/oficina_contable.glb', (gltf) => {
-        const model = gltf.scene;
-        model.scale.set(2, 2, 2);
-        scene.add(model);
-    }, undefined, (error) => {
-        console.error('Error cargando modelo 3D:', error);
-        // Fallback: cubo simple si no carga
-        const geometry = new THREE.BoxGeometry(3, 3, 3);
-        const material = new THREE.MeshBasicMaterial({ color: 0x2563eb, wireframe: true });
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
+    loader.load('https://github.com/Loversci/cuentaconmigo/raw/main/3d/oficina_contable.glb', (gltf) => {
+    const model = gltf.scene;
+    model.scale.set(2.5, 2.5, 2.5);
+    model.position.set(0, -1, 0);
+    scene.add(model);
+}, undefined, (error) => {
+    console.error('Error cargando modelo 3D:', error);
+    // Fallback visual si no carga
+    const geometry = new THREE.DodecahedronGeometry(3, 0);
+    const material = new THREE.MeshStandardMaterial({ 
+        color: 0x2563eb, 
+        wireframe: true,
+        emissive: 0x2563eb,
+        emissiveIntensity: 0.5
     });
+    const fallback = new THREE.Mesh(geometry, material);
+    scene.add(fallback);
+    
+    // Animación suave del fallback
+    const animateFallback = () => {
+        fallback.rotation.x += 0.01;
+        fallback.rotation.y += 0.01;
+        requestAnimationFrame(animateFallback);
+    };
+    animateFallback();
 
     // Animación
     const animate = () => {
