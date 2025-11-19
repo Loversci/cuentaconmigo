@@ -70,7 +70,7 @@
         .hero-subtitle { font-size: 1.35rem; max-width: 800px; margin: 0 auto 3rem; opacity: 0.95; font-weight: 300; }
         .hero-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 4rem 0; }
         .stat-card { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.2); }
-        .stat-number { font-size: 2.8rem; font-weight: 800; }
+        .stat-number { font-size: 2.8rem; font-weight: 800; line-height: 1.1; }
         .btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2.5rem; font-weight: 600; border-radius: 9999px; text-decoration: none; transition: var(--transition); }
         .btn-primary { background: white; color: var(--primary-dark); box-shadow: var(--shadow-lg); }
         .btn-primary:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
@@ -107,6 +107,17 @@
             .menu-toggle { display: flex; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; }
             .menu-toggle span { width: 28px; height: 3px; background: var(--primary); border-radius: 3px; transition: var(--transition); }
         }
+        
+        @media (max-width: 1024px) {
+    .hero-stats .stat-card:nth-child(1) .stat-number {
+        font-size: 2.2rem;   /* Reduce solo el VAN en pantallas medianas */
+    }
+}
+@media (max-width: 640px) {
+    .hero-stats .stat-card:nth-child(1) .stat-number {
+        font-size: 1.9rem;   /* Aún más pequeño en móviles */
+    }
+}
     </style>
 </head>
 <body>
