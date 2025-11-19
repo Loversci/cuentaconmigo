@@ -4,6 +4,53 @@
 // ===================================
 
 // ===================================
+// INICIALIZACIÓN DE PARTÍCULAS
+// ===================================
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.tsParticles) {
+        tsParticles.load("particles-js", {
+            fpsLimit: 60,
+            particles: {
+                number: { value: 50, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.3, random: true },
+                size: { value: 3, random: true },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    attract: { enable: false, rotateX: 600, rotateY: 1200 }
+                },
+                links: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.2,
+                    width: 1
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: true, mode: "push" },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 140, line_linked: { opacity: 1 } },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+    }
+});
+
+// ===================================
 // GRÁFICOS CON CHART.JS
 // ===================================
 
@@ -299,80 +346,3 @@ if (resultadosChartCtx) {
         }
     });
 }
-
-// ===================================
-// ESCENA 3D OFICINA CONTABLE (Three.js totalmente funcional)
-// ===================================
-
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('office-3d-container');
-    if (!container || typeof THREE === 'undefined') return;
-
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x0f172a);
-
-    const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.set(8, 5, 10);
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    container.appendChild(renderer.domElement);
-
-    // Luces
-    scene.add(new THREE.AmbientLight(0xffffff, 0.7));
-    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
-    dirLight.position.set(5, 10, 7);
-    scene.add(dirLight);
-
-    // Controles
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
-    controls.minDistance = 5;
-    controls.maxDistance = 20;
-    controls.maxPolarAngle = Math.PI / 2;
-
-    // Cargar modelo GLB
-    const loader = new THREE.GLTFLoader();
-    loader.load(
-        'https://github.com/Loversci/cuentaconmigo/raw/main/3d/oficina_contable.glb',
-        (gltf) => {
-            const model = gltf.scene;
-            model.scale.set(2.5, 2.5, 2.5);
-            model.position.set(0, -1, 0);
-            scene.add(model);
-        },
-        undefined,
-        (error) => {
-            console.error('Error cargando modelo 3D:', error);
-            // Fallback visual atractivo
-            const geometry = new THREE.DodecahedronGeometry(3);
-            const material = new THREE.MeshStandardMaterial({ color: 0x2563eb, wireframe: true, emissive: 0x2563eb, emissiveIntensity: 0.8 });
-            const fallback = new THREE.Mesh(geometry, material);
-            scene.add(fallback);
-            const animateFallback = () => {
-                fallback.rotation.x += 0.01;
-                fallback.rotation.y += 0.01;
-                requestAnimationFrame(animateFallback);
-                renderer.render(scene, camera);
-            };
-            animateFallback();
-        }
-    );
-
-    // Loop de animación
-    const animate = () => {
-        requestAnimationFrame(animate);
-        controls.update();
-        renderer.render(scene, camera);
-    };
-    animate();
-
-    // Resize
-    window.addEventListener('resize', () => {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-    });
-});
