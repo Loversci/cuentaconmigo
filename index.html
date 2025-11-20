@@ -49,30 +49,35 @@
         body { font-family: 'Inter', sans-serif; line-height: 1.7; color: var(--gray-800); background: var(--white); }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
 
-        /* --- NAVBAR TRANSPARENTE (EFECTO VIDRIO) --- */
+        /* --- NAVBAR CRISTALINA (CORREGIDA) --- */
         .navbar { 
             position: fixed; 
             top: 0; 
             left: 0; 
             right: 0; 
             z-index: 1000; 
-            /* Azul oscuro con 75% de opacidad (Transparente) */
-            background: rgba(15, 23, 42, 0.75); 
-            /* Desenfoque fuerte para que el texto sea legible sobre el fondo */
-            backdrop-filter: blur(15px); 
+            
+            /* CAMBIO CLAVE: Bajamos mucho la opacidad (0.2) para que se vea el fondo */
+            background: rgba(15, 23, 42, 0.2); 
+            
+            /* Desenfoque fuerte */
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px); /* Para Safari/iPhone */
+            
             height: 90px; 
             transition: var(--transition); 
             box-shadow: var(--shadow-sm); 
-            border-bottom: 1px solid rgba(255,255,255,0.05); 
+            border-bottom: 1px solid rgba(255,255,255,0.1); /* Borde sutil */
         }
         
-        /* Al hacer scroll se hace un poco más sólida (85%) para leer mejor */
+        /* Cuando bajas (scroll), se oscurece para que se lea bien sobre fondo blanco */
         .navbar.scrolled { 
             height: 70px; 
-            background: rgba(15, 23, 42, 0.90); 
+            background: rgba(15, 23, 42, 0.95); /* Casi sólido al bajar */
             box-shadow: var(--shadow-md); 
         }
-        
+        /* ------------------------------------- */
+
         .nav-container { height: 100%; display: flex; justify-content: space-between; align-items: center; }
         
         /* Estilos del Logo */
@@ -100,7 +105,7 @@
         
         .nav-link { 
             font-weight: 500; 
-            color: rgba(255, 255, 255, 0.85); /* Texto blanco casi puro */
+            color: rgba(255, 255, 255, 0.9); 
             position: relative; 
             text-decoration: none; 
             transition: var(--transition);
@@ -123,7 +128,7 @@
         
         .nav-link:hover, .nav-link.active { 
             color: var(--white); 
-            text-shadow: 0 0 10px rgba(255,255,255,0.4);
+            text-shadow: 0 0 15px rgba(255,255,255,0.6);
         }
 
         .menu-toggle span { background: var(--white); }
@@ -235,7 +240,7 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <!-- LOGO HEADER: Usando logo.png (Letras Plateadas/Blancas) -->
+            <!-- LOGO HEADER -->
             <a href="#" class="logo">
                 <img src="img/logo.png" alt="Cuenta Conmigo" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-calculator\' style=\'color:white;\'></i> <span style=\'color:white;\'>Cuenta Conmigo</span>'">
             </a>
