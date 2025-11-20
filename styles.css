@@ -1119,6 +1119,12 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
     }
+
+iframe {
+    position: relative;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
     
     .proyecto-card.full-width,
     .financiero-card.full-width,
