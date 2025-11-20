@@ -74,8 +74,10 @@
         .btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2.5rem; font-weight: 600; border-radius: 9999px; text-decoration: none; transition: var(--transition); }
         .btn-primary { background: white; color: var(--primary-dark); box-shadow: var(--shadow-lg); }
         .btn-primary:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
-        #particles-js {    position: absolute;    width: 100%;    height: 100%;    top: 0;    left: 0;    z-index: 1;}
-        .hero-content {    position: relative;    z-index: 2;}
+        
+        /* Estilos de Partículas */
+        #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
+        .hero-content { position: relative; z-index: 2; }
 
         /* Secciones */
         .section { padding: 6rem 0; }
@@ -111,19 +113,15 @@
         }
         
         @media (max-width: 1024px) {
-    .hero-stats .stat-card:nth-child(1) .stat-number {
-        font-size: 2.2rem;   /* Reduce solo el VAN en pantallas medianas */
-    }
-}
-@media (max-width: 640px) {
-    .hero-stats .stat-card:nth-child(1) .stat-number {
-        font-size: 1.9rem;   /* Aún más pequeño en móviles */
-    }
-}
+            .hero-stats .stat-card:nth-child(1) .stat-number { font-size: 2.2rem; }
+        }
+        @media (max-width: 640px) {
+            .hero-stats .stat-card:nth-child(1) .stat-number { font-size: 1.9rem; }
+        }
     </style>
 </head>
 <body>
-       <!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo"><i class="fas fa-calculator"></i> Cuenta Conmigo</a>
@@ -391,7 +389,7 @@
                     <h3 class="card-title">Tour 3D Interactivo</h3>
                     <p>Explora la oficina física de Cuenta Conmigo en Managua</p>
                     
-                    <!-- TOUR 360° CON KUULA (reemplaza todo el contenedor anterior) -->
+                    <!-- TOUR 360° CON KUULA -->
                     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); margin-top: 1rem; box-shadow: var(--shadow-lg);">
                         <iframe 
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
@@ -448,11 +446,10 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/examples/js/loaders/GLTFLoader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/examples/js/controls/OrbitControls.min.js"></script>
 
-    <!-- Tu script.js completo (el mismo que tenías) -->
+    <!-- Script Principal Corregido -->
     <script>
-        <script>
 // ===================================
-// 1. INICIALIZACIÓN DE PARTÍCULAS (¡ESTO ES LO QUE FALTABA!)
+// 1. INICIALIZACIÓN DE PARTÍCULAS
 // ===================================
 document.addEventListener('DOMContentLoaded', () => {
     if (window.tsParticles) {
@@ -647,7 +644,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-    </script>
     </script>
 </body>
 </html>
