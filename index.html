@@ -54,22 +54,26 @@
         .navbar.scrolled { height: 70px; box-shadow: var(--shadow-md); }
         .nav-container { height: 100%; display: flex; justify-content: space-between; align-items: center; }
         
-        /* --- LOGO PERSONALIZADO (MODIFICADO) --- */
+        /* --- ESTILOS DEL LOGO PRINCIPAL (HEADER) --- */
         .logo { 
             display: flex; 
             align-items: center; 
             text-decoration: none; 
+            padding: 5px 0;
         }
         .logo img {
-            height: 65px; /* Tamaño grande inicial */
+            height: 55px; /* Altura ideal para el logo horizontal */
             width: auto;
             transition: var(--transition);
+            display: block;
         }
-        /* Cuando se hace scroll, el logo se hace más pequeño */
         .navbar.scrolled .logo img {
-            height: 50px;
+            height: 45px; /* Se reduce suavemente al hacer scroll */
         }
-        /* --------------------------------------- */
+        @media (max-width: 480px) {
+            .logo img { height: 40px; }
+        }
+        /* ------------------------------------------- */
 
         .nav-menu { display: flex; gap: 2.5rem; list-style: none; }
         .nav-link { font-weight: 600; color: var(--gray-600); position: relative; text-decoration: none; }
@@ -120,6 +124,21 @@
         .footer-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: white; }
         .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; opacity: 0.8; }
 
+        /* --- ESTILO LOGO UNIVERSIDAD (FOOTER) --- */
+        .footer-unan-img {
+            max-width: 200px; /* Controla el tamaño en el footer */
+            height: auto;
+            display: block;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+        .footer-unan-img:hover {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+        /* ---------------------------------------- */
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-menu { position: fixed; top: 80px; left: 0; width: 100%; background: white; flex-direction: column; padding: 2rem; box-shadow: var(--shadow-lg); transform: translateY(-100%); opacity: 0; transition: var(--transition); }
@@ -135,13 +154,11 @@
             .hero-stats .stat-card:nth-child(1) .stat-number { font-size: 1.9rem; }
         }
         
-
         #multimedia .card:has(iframe), 
         #multimedia .card:hover:has(iframe) {
-            transform: none !important; /* Se queda quieta */
-            box-shadow: var(--shadow-md) !important; /* Mantiene la sombra normal */
+            transform: none !important; 
+            box-shadow: var(--shadow-md) !important; 
         }
-
 
         iframe {
             position: relative;
@@ -159,11 +176,10 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <!-- LOGO IMAGEN: Reemplaza 'ruta-a-tu-logo.png' con la ubicación real de tu imagen -->
+            <!-- LOGO HEADER (CUENTA CONMIGO) -->
             <a href="#" class="logo">
-                <img src="https://raw.githubusercontent.com/Loversci/cuentaconmigo/main/img/logo.png" alt="Cuenta Conmigo" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-calculator\'></i> Cuenta Conmigo'">
+                <img src="img/logo.png" alt="Cuenta Conmigo" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-calculator\'></i> Cuenta Conmigo'">
             </a>
-            <!-- Nota: He puesto un 'onerror' para que si la imagen no carga, muestre el texto antiguo automáticamente -->
 
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#inicio" class="nav-link active">Inicio</a></li>
@@ -453,15 +469,19 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
+                <!-- Columna 1 -->
                 <div>
-                    <!-- Logo en footer también opcional -->
-                    <h3 class="footer-title">Cuenta Conmigo</h3>
+                    <h3 class="footer-title"><i class="fas fa-calculator"></i> Cuenta Conmigo</h3>
                     <p>Firma contable digital que impulsa el crecimiento de las PYMEs nicaragüenses con innovación y excelencia.</p>
                 </div>
+                
+                <!-- Columna 2 -->
                 <div>
                     <h4 class="footer-title">Proyecto Académico</h4>
                     <p>UNAN-Managua<br>Contaduría Pública y Finanzas<br>Valoración Financiera de Proyectos<br>Noviembre 2025</p>
                 </div>
+                
+                <!-- Columna 3 -->
                 <div>
                     <h4 class="footer-title">Resultados Clave</h4>
                     <ul style="list-style: none; margin-top: 1rem;">
@@ -471,7 +491,18 @@
                         <li>• ROI: 562%</li>
                     </ul>
                 </div>
+
+                <!-- Columna 4: LOGO UNAN (Nuevo) -->
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <h4 class="footer-title">Avalado por</h4>
+                    <a href="https://www.unan.edu.ni/" target="_blank">
+                        <!-- Asegúrate de tener esta imagen guardada como logo-unan-blanco.png -->
+                        <img src="img/logo-unan-blanco.png" alt="Logo UNAN-Managua" class="footer-unan-img">
+                    </a>
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Facultad de Ciencias Económicas</p>
+                </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>© 2025 Cuenta Conmigo • Producto Integrador Final • Todos los derechos reservados</p>
                 <p>Hecho con <i class="fas fa-heart" style="color: #f43f5e;"></i> por Jaime Antonio Espino Álvarez</p>
