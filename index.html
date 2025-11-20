@@ -49,34 +49,28 @@
         body { font-family: 'Inter', sans-serif; line-height: 1.7; color: var(--gray-800); background: var(--white); }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
 
-        /* --- NAVBAR CRISTALINA (CORREGIDA) --- */
+        /* --- NAVBAR CRISTALINA (EFECTO VIDRIO) --- */
         .navbar { 
             position: fixed; 
             top: 0; 
             left: 0; 
             right: 0; 
             z-index: 1000; 
-            
-            /* CAMBIO CLAVE: Bajamos mucho la opacidad (0.2) para que se vea el fondo */
-            background: rgba(15, 23, 42, 0.2); 
-            
-            /* Desenfoque fuerte */
-            backdrop-filter: blur(20px); 
-            -webkit-backdrop-filter: blur(20px); /* Para Safari/iPhone */
-            
+            background: rgba(15, 23, 42, 0.2); /* Muy transparente al inicio */
+            backdrop-filter: blur(20px); /* Mucho desenfoque */
+            -webkit-backdrop-filter: blur(20px);
             height: 90px; 
             transition: var(--transition); 
             box-shadow: var(--shadow-sm); 
-            border-bottom: 1px solid rgba(255,255,255,0.1); /* Borde sutil */
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
-        /* Cuando bajas (scroll), se oscurece para que se lea bien sobre fondo blanco */
         .navbar.scrolled { 
             height: 70px; 
-            background: rgba(15, 23, 42, 0.95); /* Casi sólido al bajar */
+            background: rgba(15, 23, 42, 0.95); /* Oscuro al bajar */
             box-shadow: var(--shadow-md); 
         }
-        /* ------------------------------------- */
+        /* ----------------------------------------- */
 
         .nav-container { height: 100%; display: flex; justify-content: space-between; align-items: center; }
         
@@ -100,7 +94,7 @@
             .logo img { height: 40px; }
         }
 
-        /* Menú de Navegación (Texto Blanco) */
+        /* Menú de Navegación */
         .nav-menu { display: flex; gap: 2.5rem; list-style: none; }
         
         .nav-link { 
@@ -197,7 +191,6 @@
                 top: 80px; 
                 left: 0; 
                 width: 100%; 
-                /* Menú móvil oscuro */
                 background: rgba(15, 23, 42, 0.98); 
                 flex-direction: column; 
                 padding: 2rem; 
@@ -240,7 +233,6 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <!-- LOGO HEADER -->
             <a href="#" class="logo">
                 <img src="img/logo.png" alt="Cuenta Conmigo" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-calculator\' style=\'color:white;\'></i> <span style=\'color:white;\'>Cuenta Conmigo</span>'">
             </a>
@@ -469,7 +461,7 @@
             
             <div class="card" style="text-align: center; margin-top: 4rem; padding: 4rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;" data-aos="fade-up">
                 <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Cuenta Conmigo no es solo un negocio.<br>Es una contribución al desarrollo de Nicaragua.</h2>
-                <p style="font-size: 1.3rem; opacity: 0.95;">Jaime Antonio Espino Alvarez<br>UNAN-Managua • Octubre 2025</p>
+                <p style="font-size: 1.3rem; opacity: 0.95;">Jaime Antonio Espino Álvarez<br>UNAN-Managua • Noviembre 2025</p>
             </div>
         </div>
     </section>
@@ -525,6 +517,18 @@
                     </p>
                 </div>
             </div>
+
+            <!-- NUEVA SECCIÓN: VISOR DE PDF -->
+            <div class="card" data-aos="fade-up" style="margin-top: 3rem; height: 85vh; min-height: 500px; padding: 0; overflow: hidden;">
+                <h3 style="text-align: center; padding: 1rem; background: var(--gray-50); border-bottom: 1px solid var(--gray-100);">Visualización del Documento</h3>
+                <!-- IMPORTANTE: Usamos el link de GitHub Pages para que se visualice y no se descargue -->
+                <iframe 
+                    src="https://loversci.github.io/cuentaconmigo/documentos/Cuenta_Conmigo_Producto_Integrador_Final.pdf" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:none;"
+                ></iframe>
+            </div>
         </div>
     </section>
 
@@ -541,7 +545,7 @@
                 <!-- Columna 2 -->
                 <div>
                     <h4 class="footer-title">Proyecto Académico</h4>
-                    <p>UNAN-Managua<br>Contaduría Pública y Finanzas<br>Valoración Financiera de Proyectos<br>Octubre 2025</p>
+                    <p>UNAN-Managua<br>Contaduría Pública y Finanzas<br>Valoración Financiera de Proyectos<br>Noviembre 2025</p>
                 </div>
                 
                 <!-- Columna 3 -->
