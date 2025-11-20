@@ -35,7 +35,7 @@
             --gray-100: #f1f5f9;
             --gray-600: #475569;
             --gray-800: #1e293b;
-            --gray-900: #0f172a; /* Azul Oscuro Profundo */
+            --gray-900: #0f172a;
             --white: #ffffff;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
             --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
@@ -49,22 +49,30 @@
         body { font-family: 'Inter', sans-serif; line-height: 1.7; color: var(--gray-800); background: var(--white); }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
 
-        /* --- NAVBAR MODIFICADO (FONDO OSCURO) --- */
+        /* --- NAVBAR TRANSPARENTE (EFECTO VIDRIO) --- */
         .navbar { 
             position: fixed; 
             top: 0; 
             left: 0; 
             right: 0; 
             z-index: 1000; 
-            /* Cambio de color: Fondo oscuro con un poco de transparencia */
-            background: rgba(15, 23, 42, 0.95); 
-            backdrop-filter: blur(12px); 
+            /* Azul oscuro con 75% de opacidad (Transparente) */
+            background: rgba(15, 23, 42, 0.75); 
+            /* Desenfoque fuerte para que el texto sea legible sobre el fondo */
+            backdrop-filter: blur(15px); 
             height: 90px; 
             transition: var(--transition); 
             box-shadow: var(--shadow-sm); 
-            border-bottom: 1px solid rgba(255,255,255,0.1); /* Línea sutil separadora */
+            border-bottom: 1px solid rgba(255,255,255,0.05); 
         }
-        .navbar.scrolled { height: 70px; box-shadow: var(--shadow-md); }
+        
+        /* Al hacer scroll se hace un poco más sólida (85%) para leer mejor */
+        .navbar.scrolled { 
+            height: 70px; 
+            background: rgba(15, 23, 42, 0.90); 
+            box-shadow: var(--shadow-md); 
+        }
+        
         .nav-container { height: 100%; display: flex; justify-content: space-between; align-items: center; }
         
         /* Estilos del Logo */
@@ -92,13 +100,12 @@
         
         .nav-link { 
             font-weight: 500; 
-            color: rgba(255, 255, 255, 0.8); /* Texto blanco suave */
+            color: rgba(255, 255, 255, 0.85); /* Texto blanco casi puro */
             position: relative; 
             text-decoration: none; 
             transition: var(--transition);
         }
         
-        /* Línea debajo del link (Ahora verde para resaltar sobre oscuro) */
         .nav-link::after { 
             content: ''; 
             position: absolute; 
@@ -106,7 +113,7 @@
             left: 50%; 
             width: 0; 
             height: 3px; 
-            background: var(--secondary); /* Verde Esmeralda */
+            background: var(--secondary); 
             border-radius: 2px; 
             transition: var(--transition); 
             transform: translateX(-50%); 
@@ -114,17 +121,12 @@
         
         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
         
-        /* Color al pasar el mouse (Blanco brillante o Verde) */
         .nav-link:hover, .nav-link.active { 
             color: var(--white); 
-            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+            text-shadow: 0 0 10px rgba(255,255,255,0.4);
         }
 
-        /* Botón Menú Móvil (Blanco) */
-        .menu-toggle span { 
-            background: var(--white); /* Líneas blancas */
-        }
-        /* ----------------------------------------- */
+        .menu-toggle span { background: var(--white); }
 
         /* Hero */
         .hero { min-height: 100vh; background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: white; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 80px; }
@@ -185,13 +187,13 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            /* Ajuste del menú móvil para fondo oscuro */
             .nav-menu { 
                 position: fixed; 
                 top: 80px; 
                 left: 0; 
                 width: 100%; 
-                background: var(--gray-900); /* Fondo oscuro también en móvil */
+                /* Menú móvil oscuro */
+                background: rgba(15, 23, 42, 0.98); 
                 flex-direction: column; 
                 padding: 2rem; 
                 box-shadow: var(--shadow-lg); 
@@ -233,7 +235,7 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <!-- LOGO HEADER: Asegúrate de usar la imagen 'logo.png' que tiene las letras plateadas/blancas -->
+            <!-- LOGO HEADER: Usando logo.png (Letras Plateadas/Blancas) -->
             <a href="#" class="logo">
                 <img src="img/logo.png" alt="Cuenta Conmigo" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-calculator\' style=\'color:white;\'></i> <span style=\'color:white;\'>Cuenta Conmigo</span>'">
             </a>
@@ -462,7 +464,7 @@
             
             <div class="card" style="text-align: center; margin-top: 4rem; padding: 4rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;" data-aos="fade-up">
                 <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Cuenta Conmigo no es solo un negocio.<br>Es una contribución al desarrollo de Nicaragua.</h2>
-                <p style="font-size: 1.3rem; opacity: 0.95;">Jaime Antonio Espino Alvarez<br>UNAN-Managua • Octubre 2025</p>
+                <p style="font-size: 1.3rem; opacity: 0.95;">Jaime Antonio Espino Álvarez<br>UNAN-Managua • Noviembre 2025</p>
             </div>
         </div>
     </section>
