@@ -50,11 +50,27 @@
         .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
 
         /* Navbar */
-        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); height: 80px; transition: var(--transition); box-shadow: var(--shadow-sm); }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); height: 90px; transition: var(--transition); box-shadow: var(--shadow-sm); }
         .navbar.scrolled { height: 70px; box-shadow: var(--shadow-md); }
         .nav-container { height: 100%; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
-        .logo i { font-size: 2.4rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* --- LOGO PERSONALIZADO (MODIFICADO) --- */
+        .logo { 
+            display: flex; 
+            align-items: center; 
+            text-decoration: none; 
+        }
+        .logo img {
+            height: 65px; /* Tamaño grande inicial */
+            width: auto;
+            transition: var(--transition);
+        }
+        /* Cuando se hace scroll, el logo se hace más pequeño */
+        .navbar.scrolled .logo img {
+            height: 50px;
+        }
+        /* --------------------------------------- */
+
         .nav-menu { display: flex; gap: 2.5rem; list-style: none; }
         .nav-link { font-weight: 600; color: var(--gray-600); position: relative; text-decoration: none; }
         .nav-link::after { content: ''; position: absolute; bottom: -8px; left: 50%; width: 0; height: 3px; background: var(--primary); border-radius: 2px; transition: var(--transition); transform: translateX(-50%); }
@@ -120,30 +136,35 @@
         }
         
 
-#multimedia .card:has(iframe), 
-#multimedia .card:hover:has(iframe) {
-    transform: none !important; /* Se queda quieta */
-    box-shadow: var(--shadow-md) !important; /* Mantiene la sombra normal */
-}
+        #multimedia .card:has(iframe), 
+        #multimedia .card:hover:has(iframe) {
+            transform: none !important; /* Se queda quieta */
+            box-shadow: var(--shadow-md) !important; /* Mantiene la sombra normal */
+        }
 
 
-iframe {
-    position: relative;
-    z-index: 50 !important;
-    pointer-events: auto !important;
-}
+        iframe {
+            position: relative;
+            z-index: 50 !important;
+            pointer-events: auto !important;
+        }
 
-#particles-js {
-    pointer-events: none !important;
-    z-index: 0 !important;
-}
+        #particles-js {
+            pointer-events: none !important;
+            z-index: 0 !important;
+        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo"><i class="fas fa-calculator"></i> Cuenta Conmigo</a>
+            <!-- LOGO IMAGEN: Reemplaza 'ruta-a-tu-logo.png' con la ubicación real de tu imagen -->
+            <a href="#" class="logo">
+                <img src="https://raw.githubusercontent.com/Loversci/cuentaconmigo/main/img/logo.png" alt="Cuenta Conmigo" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-calculator\'></i> Cuenta Conmigo'">
+            </a>
+            <!-- Nota: He puesto un 'onerror' para que si la imagen no carga, muestre el texto antiguo automáticamente -->
+
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#inicio" class="nav-link active">Inicio</a></li>
                 <li><a href="#proyecto" class="nav-link">Proyecto</a></li>
@@ -433,7 +454,8 @@ iframe {
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h3 class="footer-title"><i class="fas fa-calculator"></i> Cuenta Conmigo</h3>
+                    <!-- Logo en footer también opcional -->
+                    <h3 class="footer-title">Cuenta Conmigo</h3>
                     <p>Firma contable digital que impulsa el crecimiento de las PYMEs nicaragüenses con innovación y excelencia.</p>
                 </div>
                 <div>
@@ -465,7 +487,7 @@ iframe {
     <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/examples/js/loaders/GLTFLoader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/examples/js/controls/OrbitControls.min.js"></script>
 
-    <!-- Script Principal Corregido -->
+    <!-- Script Principal -->
     <script>
 // ===================================
 // 1. INICIALIZACIÓN DE PARTÍCULAS
