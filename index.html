@@ -450,19 +450,62 @@
 
     <!-- Tu script.js completo (el mismo que tenías) -->
     <script>
+        <script>
 // ===================================
-// CUENTA CONMIGO - JavaScript Principal
-// Versión corregida y optimizada - Noviembre 2025
+// 1. INICIALIZACIÓN DE PARTÍCULAS (¡ESTO ES LO QUE FALTABA!)
 // ===================================
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.tsParticles) {
+        tsParticles.load("particles-js", {
+            fpsLimit: 60,
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.2, random: true },
+                size: { value: 3, random: true },
+                move: {
+                    enable: true,
+                    speed: 1.5,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    attract: { enable: false, rotateX: 600, rotateY: 1200 }
+                },
+                links: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.15,
+                    width: 1
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: true, mode: "push" },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 140, line_linked: { opacity: 0.5 } },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+    }
+});
 
 // ===================================
-// GRÁFICOS CON CHART.JS
+// 2. GRÁFICOS CON CHART.JS
 // ===================================
 
 Chart.defaults.font.family = "'Inter', sans-serif";
 Chart.defaults.color = '#6b7280';
 
-// Gráfico 1: Proyección de Demanda Insatisfecha
+// Gráfico 1: Demanda
 const demandChartCtx = document.getElementById('demandChart');
 if (demandChartCtx) {
     new Chart(demandChartCtx, {
@@ -479,65 +522,26 @@ if (demandChartCtx) {
     });
 }
 
-// Gráfico 2: Plan de Producción Anual
+// Gráfico 2: Producción
 const productionChartCtx = document.getElementById('productionChart');
 if (productionChartCtx) {
     new Chart(productionChartCtx, {
         type: 'bar',
         data: {
             labels: ['2025', '2026', '2027', '2028', '2029'],
-            datasets: [
-                {
-                    label: 'Total Servicios Anuales',
-                    data: [37406, 78074, 130123, 195185, 234221],
-                    backgroundColor: [
-                        'rgba(37, 99, 235, 0.8)',
-                        'rgba(59, 130, 246, 0.8)',
-                        'rgba(16, 185, 129, 0.8)',
-                        'rgba(20, 184, 166, 0.8)',
-                        'rgba(245, 158, 11, 0.8)'
-                    ],
-                    borderColor: [
-                        '#2563eb',
-                        '#3b82f6',
-                        '#10b981',
-                        '#14b8a6',
-                        '#f59e0b'
-                    ],
-                    borderWidth: 2
-                }
-            ]
+            datasets: [{
+                label: 'Total Servicios Anuales',
+                data: [37406, 78074, 130123, 195185, 234221],
+                backgroundColor: ['rgba(37, 99, 235, 0.8)', 'rgba(59, 130, 246, 0.8)', 'rgba(16, 185, 129, 0.8)', 'rgba(20, 184, 166, 0.8)', 'rgba(245, 158, 11, 0.8)'],
+                borderColor: ['#2563eb', '#3b82f6', '#10b981', '#14b8a6', '#f59e0b'],
+                borderWidth: 2
+            }]
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return context.parsed.y.toLocaleString() + ' servicios';
-                        }
-                    }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        callback: function(value) {
-                            return value.toLocaleString();
-                        }
-                    }
-                }
-            }
-        }
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { callback: v => v.toLocaleString() } } } }
     });
 }
 
-// Gráfico 3: Inversión por Año
+// Gráfico 3: Inversión
 const inversionChartCtx = document.getElementById('inversionChart');
 if (inversionChartCtx) {
     new Chart(inversionChartCtx, {
@@ -546,334 +550,104 @@ if (inversionChartCtx) {
             labels: ['Año 0 (2024)', 'Año 1 (2025)', 'Año 2-5 (2026-2029)'],
             datasets: [{
                 data: [65000, 25000, 100000],
-                backgroundColor: [
-                    'rgba(37, 99, 235, 0.8)',
-                    'rgba(16, 185, 129, 0.8)',
-                    'rgba(245, 158, 11, 0.8)'
-                ],
-                borderColor: [
-                    '#2563eb',
-                    '#10b981',
-                    '#f59e0b'
-                ],
-                borderWidth: 2
+                backgroundColor: ['rgba(37, 99, 235, 0.8)', 'rgba(16, 185, 129, 0.8)', 'rgba(245, 158, 11, 0.8)'],
+                borderColor: ['#2563eb', '#10b981', '#f59e0b'], borderWidth: 2
             }]
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom'
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            const label = context.label || '';
-                            const value = context.parsed || 0;
-                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                            const percentage = ((value / total) * 100).toFixed(1);
-                            return `${label}: $${value.toLocaleString()} (${percentage}%)`;
-                        }
-                    }
-                }
-            }
-        }
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
     });
 }
 
-// Gráfico 4: Estructura de Financiamiento
+// Gráfico 4: Financiamiento
 const financiamientoChartCtx = document.getElementById('financiamientoChart');
 if (financiamientoChartCtx) {
     new Chart(financiamientoChartCtx, {
         type: 'pie',
         data: {
-            labels: [
-                'Aporte de Socios (33%)',
-                'Préstamo BANPRO (43%)',
-                'Reinversión Utilidades (24%)'
-            ],
+            labels: ['Aporte de Socios (33%)', 'Préstamo BANPRO (43%)', 'Reinversión Utilidades (24%)'],
             datasets: [{
                 data: [62700, 81700, 45600],
-                backgroundColor: [
-                    'rgba(37, 99, 235, 0.8)',
-                    'rgba(16, 185, 129, 0.8)',
-                    'rgba(245, 158, 11, 0.8)'
-                ],
-                borderColor: [
-                    '#2563eb',
-                    '#10b981',
-                    '#f59e0b'
-                ],
-                borderWidth: 2
+                backgroundColor: ['rgba(37, 99, 235, 0.8)', 'rgba(16, 185, 129, 0.8)', 'rgba(245, 158, 11, 0.8)'],
+                borderColor: ['#2563eb', '#10b981', '#f59e0b'], borderWidth: 2
             }]
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom'
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            const value = context.parsed || 0;
-                            return `$${value.toLocaleString()}`;
-                        }
-                    }
-                }
-            }
-        }
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
     });
 }
 
-// Gráfico 5: Flujos de Caja Proyectados
+// Gráfico 5: Flujo
 const flujoChartCtx = document.getElementById('flujoChart');
 if (flujoChartCtx) {
     new Chart(flujoChartCtx, {
         type: 'bar',
         data: {
-            labels: ['Año 0', 'Año 1 (2025)', 'Año 2 (2026)', 'Año 3 (2027)', 'Año 4 (2028)', 'Año 5 (2029)'],
+            labels: ['Año 0', 'Año 1', 'Año 2', 'Año 3', 'Año 4', 'Año 5'],
             datasets: [
-                {
-                    label: 'Ingresos',
-                    data: [0, 565080, 1199880, 1999800, 2999700, 3599640],
-                    backgroundColor: 'rgba(16, 185, 129, 0.8)',
-                    borderColor: '#10b981',
-                    borderWidth: 2
-                },
-                {
-                    label: 'Costos + Gastos',
-                    data: [0, -521269, -852482, -1253870, -1693832, -1975803],
-                    backgroundColor: 'rgba(239, 68, 68, 0.8)',
-                    borderColor: '#ef4444',
-                    borderWidth: 2
-                },
-                {
-                    label: 'Flujo Neto',
-                    data: [-187500, -17927, 154584, 488356, 890313, 1107891],
-                    backgroundColor: 'rgba(37, 99, 235, 0.8)',
-                    borderColor: '#2563eb',
-                    borderWidth: 2,
-                    type: 'line',
-                    tension: 0.4
-                }
+                { label: 'Ingresos', data: [0, 565080, 1199880, 1999800, 2999700, 3599640], backgroundColor: 'rgba(16, 185, 129, 0.8)', borderColor: '#10b981', borderWidth: 2 },
+                { label: 'Costos + Gastos', data: [0, -521269, -852482, -1253870, -1693832, -1975803], backgroundColor: 'rgba(239, 68, 68, 0.8)', borderColor: '#ef4444', borderWidth: 2 },
+                { label: 'Flujo Neto', data: [-187500, -17927, 154584, 488356, 890313, 1107891], backgroundColor: 'rgba(37, 99, 235, 0.8)', borderColor: '#2563eb', borderWidth: 2, type: 'line', tension: 0.4 }
             ]
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'top'
-                },
-                tooltip: {
-                    mode: 'index',
-                    intersect: false,
-                    callbacks: {
-                        label: function(context) {
-                            let label = context.dataset.label || '';
-                            let value = context.parsed.y || 0;
-                            return `${label}: $${value.toLocaleString()}`;
-                        }
-                    }
-                }
-            },
-            scales: {
-                y: {
-                    ticks: {
-                        callback: function(value) {
-                            return '$' + value.toLocaleString();
-                        }
-                    }
-                }
-            }
-        }
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true, position: 'top' } }, scales: { y: { ticks: { callback: v => '$' + v.toLocaleString() } } } }
     });
 }
 
-// Gráfico 6: Estado de Resultados Año 5
+// Gráfico 6: Resultados
 const resultadosChartCtx = document.getElementById('resultadosChart');
 if (resultadosChartCtx) {
     new Chart(resultadosChartCtx, {
         type: 'doughnut',
         data: {
-            labels: [
-                'Ingresos por Servicios',
-                'Costos Operativos',
-                'Gastos Administrativos',
-                'Gastos de Ventas',
-                'Utilidad Neta'
-            ],
+            labels: ['Ingresos', 'Costos Operativos', 'Gastos Admin', 'Gastos Ventas', 'Utilidad Neta'],
             datasets: [{
                 data: [3599640, 1295870, 503949, 161984, 1136686],
-                backgroundColor: [
-                    'rgba(16, 185, 129, 0.8)',
-                    'rgba(239, 68, 68, 0.8)',
-                    'rgba(245, 158, 11, 0.8)',
-                    'rgba(139, 92, 246, 0.8)',
-                    'rgba(37, 99, 235, 0.8)'
-                ],
-                borderColor: [
-                    '#10b981',
-                    '#ef4444',
-                    '#f59e0b',
-                    '#8b5cf6',
-                    '#2563eb'
-                ],
+                backgroundColor: ['#10b981', '#ef4444', '#f59e0b', '#8b5cf6', '#2563eb'],
                 borderWidth: 2
             }]
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        font: {
-                            size: 10
-                        }
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            const label = context.label || '';
-                            const value = context.parsed || 0;
-                            return `${label}: $${value.toLocaleString()}`;
-                        }
-                    }
-                }
-            }
-        }
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
     });
 }
 
 // ===================================
-// ESCENA 3D OFICINA CONTABLE (Three.js totalmente funcional)
+// 3. INTERFAZ Y ANIMACIONES
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('office-3d-container');
-    if (!container || typeof THREE === 'undefined') return;
-
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x0f172a);
-
-    const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.set(8, 5, 10);
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    container.appendChild(renderer.domElement);
-
-    // Luces
-    scene.add(new THREE.AmbientLight(0xffffff, 0.7));
-    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
-    dirLight.position.set(5, 10, 7);
-    scene.add(dirLight);
-
-    // Controles
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
-    controls.minDistance = 5;
-    controls.maxDistance = 20;
-    controls.maxPolarAngle = Math.PI / 2;
-
-    // Cargar modelo GLB
-    const loader = new THREE.GLTFLoader();
-    loader.load(
-        'https://github.com/Loversci/cuentaconmigo/raw/main/3d/oficina_contable.glb',
-        (gltf) => {
-            const model = gltf.scene;
-            model.scale.set(2.5, 2.5, 2.5);
-            model.position.set(0, -1, 0);
-            scene.add(model);
-        },
-        undefined,
-        (error) => {
-            console.error('Error cargando modelo 3D:', error);
-            // Fallback visual atractivo
-            const geometry = new THREE.DodecahedronGeometry(3);
-            const material = new THREE.MeshStandardMaterial({ color: 0x2563eb, wireframe: true, emissive: 0x2563eb, emissiveIntensity: 0.8 });
-            const fallback = new THREE.Mesh(geometry, material);
-            scene.add(fallback);
-            const animateFallback = () => {
-                fallback.rotation.x += 0.01;
-                fallback.rotation.y += 0.01;
-                requestAnimationFrame(animateFallback);
-                renderer.render(scene, camera);
-            };
-            animateFallback();
-        }
-    );
-
-    // Loop de animación
-    const animate = () => {
-        requestAnimationFrame(animate);
-        controls.update();
-        renderer.render(scene, camera);
-    };
-    animate();
-
-    // Resize
-    window.addEventListener('resize', () => {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-    });
-});
-
-        document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar AOS (animaciones)
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 100
-    });
+    // Inicializar animaciones al hacer scroll
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true, offset: 100 });
 
     // Menú móvil
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-    });
+    if(menuToggle && navMenu){
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    }
 
-    // Navbar scrolled effect
+    // Navbar efecto scroll
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+        if (window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
     });
 
-    // Active link al hacer scroll (opcional pero queda pro)
+    // Links activos
     window.addEventListener('scroll', () => {
         let current = 'inicio';
         document.querySelectorAll('section[id]').forEach(section => {
             const sectionTop = section.offsetTop - 100;
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute('id');
-            }
+            if (window.scrollY >= sectionTop) current = section.getAttribute('id');
         });
         document.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
+            if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
         });
     });
 });
-// =============================================================
+    </script>
     </script>
 </body>
 </html>
