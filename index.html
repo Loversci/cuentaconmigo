@@ -119,10 +119,23 @@
             .hero-stats .stat-card:nth-child(1) .stat-number { font-size: 1.9rem; }
         }
         
+
+#multimedia .card:has(iframe), 
+#multimedia .card:hover:has(iframe) {
+    transform: none !important; /* Se queda quieta */
+    box-shadow: var(--shadow-md) !important; /* Mantiene la sombra normal */
+}
+
+
 iframe {
     position: relative;
-    z-index: 9999 !important;
+    z-index: 50 !important;
     pointer-events: auto !important;
+}
+
+#particles-js {
+    pointer-events: none !important;
+    z-index: 0 !important;
 }
     </style>
 </head>
